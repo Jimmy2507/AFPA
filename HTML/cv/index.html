@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CV</title>
+</head>
+<body>
+    <div class="entete">
+        <nav class="entete">
+        <header>
+           <ul>
+                <li class="A propos"><a href="">A propos</a></li>
+                <li class="experience"><a href="">Experiences</a></li>
+                <li class="Diplomes"><a href="">Diplomes</a></li>
+                <li class="Competence"><a href="">Compétences</a></li>
+            </ul> 
+        </header>
+        </nav>
+    </div>
+    <!--Presentation-->
+    <div class="intro section" id="about">
+		<div class="container">
+			<p>Bonjour, je suis </p>
+			<div class="units-row units-split wrap">
+				<div class="unit-20">
+					<img src="" alt="Photo">
+				</div>
+				<div class="unit-80">
+					<h1>j'habite en<br><span id="typed"></span></h1>
+				</div>
+				<p>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident cum nostrum repellat optio consequuntur dolorum dolore fuga eveniet est architecto?
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+    <!--Experiences-->
+    <div class="experiences">
+        <h2>Experiences</h2>
+        <p>
+            2014-2015<br>
+            PT Traveloka Indonesia<br>
+            Web Designer
+        </p>
+        <p>
+            2014-2015<br>
+            Wego<br>
+            UI/UX Designer<br>
+        </p>
+        <p>
+            2014-2015<br>
+            Garuda Indonesia<br>
+            System Designer<br>
+        </p>
+    </div>
+    <!--Diplomes-->
+    <div class="diplomes">
+        <h2>Diplomes</h2>
+        <p>January 2014<br></p>
+        <p>Attained PHP5 certification<br></p>
+        <p> Hold world/Olympic record<br></p>
+
+        <p>December 2014<br></p>
+        <p>Audited X number of clients in only Y amount of time<br></p>
+        <p>Were promoted after only X months in the role<br></p>
+
+        <p>Mars 2014<br></p>
+        <p>Placed employees at X companies<br></p>
+        <p>United multiple teams post-merger<br></p>
+    </div>
+
+    <!--Competences-->
+    <div class="competence"></div>
+     <h2>Competences</h2>
+     <p>Web Technology<br></p>
+     <p>HTML / CSS / SASS / PHP / Javascript<br></p>
+     <p>Database<br></p>
+     <p>MySQL / MongoDB / Oracle / Access<br></p>
+     <p>Framework<br></p>
+     <p>Laravel / CodeIgniter / Zend / Ruby On Rails<br></p>
+
+     <!-- Javascript -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/typed.min.js"></script>
+    <script src="js/kube.min.js"></script>
+    <script src="js/site.js"></script>
+    <script>
+		function newTyped(){}$(function(){$("#typed").typed({
+		// Change to edit type effect
+		strings: ["France"],
+
+		typeSpeed:90,backDelay:700,contentType:"html",loop:!0,resetCallback:function(){newTyped()}}),$(".reset").click(function(){$("#typed").typed("reset")})});
+    </script>
+
+</body>
+</html>
