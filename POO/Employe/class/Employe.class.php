@@ -8,6 +8,7 @@ class Employe{
     private $_poste;
     private $_salaire;
     private $_service;
+    private static $_nbEmploye = 0;
 
     /*****************Accesseurs***************** */
     public function getNom()
@@ -69,6 +70,15 @@ class Employe{
     {
         $this->_service = $service;
     }
+    public static function getNbEmploye()
+    {
+        return self::$_nbEmploye;
+    }
+
+    public static function setNbEmploye($nbEmploye)
+    {
+        self::$_nbEmploye = $nbEmploye;
+    }
     
      /*****************Constructeur******************/ 
 
@@ -78,6 +88,7 @@ class Employe{
         {
             $this->hydrate($options);
         }
+        self::setNbEmploye(self::getNbEmploye()+1);
     }
     public function hydrate($data)
     {
@@ -146,10 +157,10 @@ class Employe{
         return $this->primeAnnuel() + $this->primeAnciennete();
     }
     function versementPrime(){
-        if(new DateTime("now")!= ){
-
-        }
+        echo "La prime d'un montant de ".$this->prime()."k € à été versé sur le compte de ".$this->getNom();
     }
+
+    
 }
 
 ?>
