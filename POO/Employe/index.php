@@ -8,12 +8,11 @@ $employe[] = new Employe (array("Nom"=>"Deschamps","Prenom"=>"Didier","dateEmbau
 $employe[] = new Employe (array("Nom"=>"Deuf","Prenom"=>"John","dateEmbauche"=>"2020-03-12","poste"=>"employe","salaire"=>60,"Service"=>"serveur"));
 $employe[] = new Employe (array("Nom"=>"Duriff","Prenom"=>"Sylvain","dateEmbauche"=>"2017-06-11","poste"=>"employe","salaire"=>72,"Service"=>"livreur"));
 $employe[] = new Employe (array("Nom"=>"Sarkozy","Prenom"=>"Nico","dateEmbauche"=>"2015-07-06","poste"=>"employe","salaire"=>5,"Service"=>"boulanger"));
-echo "Il y a ".Employe::getNbEmploye()." employés.";
+echo "Il y a ".Employe::getNbEmploye()." employés.\n";
 foreach ($employe as $e ) {
     echo "La prime est de ".$e->prime()."k€"." pour Mr ".$e->getNom()."\n";
 }
 if(date('d/m')=="30/11"){
     $employe1->versementPrime();
-} 
-
+}
 ?>
