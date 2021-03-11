@@ -10,6 +10,7 @@ class Employe {
     private $_service;
     private static $_nbEmploye = 0;
     private $_agence;
+    private $_enfants = [];
 
     /*****************Accesseurs***************** */
     public function getNom()
@@ -85,10 +86,20 @@ class Employe {
         return $this->_agence;
     }
 
-    public function setAgence($agence)
+    public function setAgence(Agence $agence)
     {
         $this->_agence = $agence;
     }
+    public function getEnfants()
+    {
+        return $this->_enfants;
+    }
+
+    public function setEnfants($enfants)
+    {
+        $this->_enfants = $enfants;
+    }
+
      /*****************Constructeur******************/ 
 
     public function __construct(array $options = [])
@@ -181,19 +192,22 @@ class Employe {
     }
     
     public function masseSalariale(){
-        return $this->getSalaire() + $this->prime()*1000;
+        return $this->getSalaire() + $this->prime();
     }
+
     public function chequeVacances(){
         if($this->cbAnnee()>=1){
-            echo "peut disposé de cheque vacances";
+            return "peut disposé de cheque vacances";
         }else{
-            echo "ne peut pas disposé de cheque vacance";
+            return "ne peut pas disposé de cheque vacance";
         }
     }
 
     
 
    
+
+    
 }
 
 ?>
