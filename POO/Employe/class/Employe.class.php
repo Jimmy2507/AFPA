@@ -1,5 +1,5 @@
 <?php
-class Employe{
+class Employe {
 
     /*****************Attributs***************** */
     private $_nom;
@@ -9,6 +9,7 @@ class Employe{
     private $_salaire;
     private $_service;
     private static $_nbEmploye = 0;
+    private $_agence;
 
     /*****************Accesseurs***************** */
     public function getNom()
@@ -79,7 +80,15 @@ class Employe{
     {
         self::$_nbEmploye = $nbEmploye;
     }
-    
+    public function getAgence()
+    {
+        return $this->_agence;
+    }
+
+    public function setAgence($agence)
+    {
+        $this->_agence = $agence;
+    }
      /*****************Constructeur******************/ 
 
     public function __construct(array $options = [])
@@ -123,20 +132,6 @@ class Employe{
       {
           return true;
       }
-      /**
-       * Compare 2 objets
-       * Renvoi 1 si le 1er est >
-       *        0 si ils sont égaux
-       *        -1 si le 1er est <
-       *
-       * @param [type] $obj1
-       * @param [type] $obj2
-       * @return void
-       */
-      public static function compareTo($obj1, $obj2)
-      {
-          return 0;
-      }
       
     public function cbAnnee(){
        $origin =new DateTime($this->getDateEmbauche());
@@ -159,8 +154,46 @@ class Employe{
     function versementPrime(){
         echo "La prime d'un montant de ".$this->prime()."k € à été versé sur le compte de ".$this->getNom();
     }
+    static function compareTo($a, $b)
+    {
+        $al = strtolower($a->_nom.$b->_prenom);
+        $bl = strtolower($b->_nom.$b->_prenom);
+        if ($al == $bl) {
+            return 0;
+        }
+        return ($al > $bl) ? +1 : -1;
+    }
+    public static function compareTo2($a, $b)
+    {
+        if ($a->getService() < $b->getService())
+        {
+            return -1;
+        }
+        else if ($a->getService() > $b->getService())
+        {
+            return 1;
+        }
+        else
+        {
+            return self::compareTo($a, $b);
+        }
+
+    }
+    
+    public function masseSalariale(){
+        return $this->getSalaire() + $this->prime()*1000;
+    }
+    public function chequeVacances(){
+        if($this->cbAnnee()>=1){
+            echo "peut disposé de cheque vacances";
+        }else{
+            echo "ne peut pas disposé de cheque vacance";
+        }
+    }
 
     
+
+   
 }
 
 ?>
