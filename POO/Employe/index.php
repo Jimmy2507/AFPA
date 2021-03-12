@@ -32,7 +32,7 @@ $masseSalariale = 0;
 foreach ($employe as $e) {
     $masseSalariale += $e->masseSalariale();
 }
-echo "La masse salariale est de :".$masseSalariale."k€\n";
+echo "La masse salariale est de :".$masseSalariale."k€\n ";
 //tickets restaurants
 foreach ($employe as $e) {
     echo "Mode de restauration pour ".$e->getPrenom().":".$e->getAgence()->getRestauration()."\n";    
