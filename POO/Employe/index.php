@@ -18,7 +18,7 @@ $employe[] = new Employe(array("nom"=>"Toto","prenom"=>"Tata","dateEmbauche"=>"2
 $employe[] = new Employe (array("Nom"=>"Deschamps","Prenom"=>"Didier","dateEmbauche"=>"2021-01-01","poste"=>"employe","salaire"=>38,"Service"=>"soudeur","Agence"=>$agence3,"Enfants"=>$enfant[0]));
 $employe[] = new Employe (array("Nom"=>"Deuf","Prenom"=>"John","dateEmbauche"=>"2020-03-12","poste"=>"employe","salaire"=>60,"Service"=>"serveur","Agence"=>$agence2,"Enfants"=>$enfant[3]));
 $employe[] = new Employe (array("Nom"=>"Duriff","Prenom"=>"Sylvain","dateEmbauche"=>"2017-06-11","poste"=>"employe","salaire"=>72,"Service"=>"grand monarque","Agence"=>$agence1,"Enfants"=>$enfant[1]));
-$employe[] = new Employe (array("Nom"=>"Sarkozy","Prenom"=>"Nico","dateEmbauche"=>"2015-07-06","poste"=>"employe","salaire"=>5,"Service"=>"boulanger","Agence"=>$agence3,"Enfants"=>[$enfant[4],$enfant[1]]));
+$employe[] = new Employe (array("Nom"=>"Sarkozy","Prenom"=>"Nico","dateEmbauche"=>"2015-07-06","poste"=>"employe","salaire"=>5,"Service"=>"boulanger","Agence"=>$agence3,"Enfants"=>$enfant[4]));
 echo "Il y a ".Employe::getNbEmploye()." employés.\n"; //Nombre d'employé
 //Affiche le montant de la prime de chaque employe
 foreach ($employe as $e ) {
@@ -45,9 +45,9 @@ foreach ($employe as $e ) {
 foreach ($employe as $e) {
     if($e->getEnfants()->montantChequeNoel()!=0){
         echo "L'enfant de ".$e->getPrenom()." : ".$e->getEnfants()->getPrenom()." a ".$e->getEnfants()->getAge()." ans, il a donc droit a un cheque cadeau d'une valeur de : ".$e->getEnfants()->montantChequeNoel()."€\n";
+
     }
 }
-
 
 //Versement prime si la date du jour est egal au 30/11
 if(date('d/m')=="30/11"){

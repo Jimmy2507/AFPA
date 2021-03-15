@@ -10,7 +10,7 @@ class Employe {
     private $_service;
     private static $_nbEmploye = 0;
     private $_agence;
-    private $_enfants = [];
+    private $_enfants =[];
 
     /*****************Accesseurs***************** */
     public function getNom()
@@ -95,7 +95,7 @@ class Employe {
         return $this->_enfants;
     }
 
-    public function setEnfants($enfants)
+    public function setEnfants(array $enfants)
     {
         $this->_enfants = $enfants;
     }
