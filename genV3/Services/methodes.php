@@ -103,8 +103,23 @@ function index($nom){
     }else{
         echo "Le fichier existe deja ! \n";
     }
-
-    
-
 }
+
+    function services($nom){
+        $nomFile = "methodes.php";
+        $verif = file_exists("U:/59011-15-02/DWWM/".$nom."/Services/$nomFile");
+        if($verif==false){
+            $f=fopen("U:/59011-15-02/DWWM/".$nom."/Services/".$nomFile,"x+");
+            $texte = "<?php\n\n";
+            $texte .="function Nom (){\n\n}";
+            fputs($f,$texte);
+            fclose($f);
+            echo "Fichier methodes crée.\n";
+        }else{
+            echo "Le fichier existe deja ";
+
+        }
+    
+    }
+    //A FAIRE : CREATION DES METHODES DANS LES CLASSE 
 ?>
