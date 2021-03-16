@@ -1,0 +1,88 @@
+<?php class Document { 
+/*****************Attributs***************** */
+	 private $_Auteur;
+	 private $_Titre;
+     private $_Emprunte;
+/*****************Accesseurs***************** */
+public function getAuteur(){
+	return $this->_Auteur;
+}
+public function setAuteur($Auteur){
+	$this->_Auteur = $Auteur;
+}
+public function getTitre(){
+	return $this->_Titre;
+}
+public function setTitre(String $Titre){
+	$this->_Titre = $Titre;
+}
+public function setEmprunte($b){
+    $this->_Emprunte = $b;
+}
+public function getEmprunte(){
+    return $this->_Emprunte;
+}
+/*****************Constructeur******************/ 
+public function __construct(array $options = [])
+{
+    if (!empty($options)) // empty : renvoi vrai si le tableau est vide
+    {
+        $this->hydrate($options);
+    }
+}
+public function hydrate($data)
+{
+    foreach ($data as $key => $value)
+    {
+        $methode = "set" . ucfirst($key); //ucfirst met la 1ere lettre en majuscule
+        if (is_callable(([$this, $methode]))) // is_callable verifie que la methode existe
+        {
+            $this->$methode($value);
+        }
+    }
+}
+/*****************Autres Méthodes***************** */ 
+    /**
+    * Transforme l'objet en chaine de caractères
+    *
+    * @return String
+    */
+   public function toString()
+   {
+       $aff =  "Le document : ".$this->getTitre().", ".$this->estEmprunter()."\n\n";
+       return $aff;
+   }
+
+   /**
+    * Renvoi vrai si l'objet en paramètre est égal à l'objet appelant
+    *
+    * @param [type] $obj
+    * @return bool
+    */
+   public function equalsTo($obj)
+   {
+       if($this->getTitre()==$obj->getTitre()){
+         return true;
+       }
+       
+   }
+   /**
+    * Compare 2 objets
+    * Renvoi 1 si le 1er est >
+    *        0 si ils sont égaux
+    *        -1 si le 1er est <
+    *
+    * @param [type] $obj1
+    * @param [type] $obj2
+    * @return void
+    */
+   public static function compareTo($obj1, $obj2)
+   {
+       return 0;
+   }
+
+   public function estEmprunter(){
+    return ($this->getEmprunte())?"Est emprunté\n":"N'est pas emprunter";
+   }
+
+}
