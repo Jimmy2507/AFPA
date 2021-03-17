@@ -1,9 +1,9 @@
 <?php
 function generer($nomClass,$attribut,$nom){
     $nomFile = $nomClass.".class.php";
-    $verif = file_exists("U:/59011-15-02/DWWM/".$nom."/class/".$nomFile);
+    $verif = file_exists("D:/repo/DWWM/".$nom."/class/".$nomFile);
     if($verif == false){
-        $f = fopen("U:/59011-15-02/DWWM/".$nom."/class/".$nomFile,"x+");
+        $f = fopen("D:/repo/DWWM/".$nom."/class/".$nomFile,"x+");
         $texte = "<?php class $nomClass { \n";
         $texte .= "/*****************Attributs***************** */\n";
         for ($i=0; $i < count($attribut) ; $i++) { 
@@ -87,9 +87,9 @@ public function hydrate(\$data)
 
 function index($nom){
     $nomFile = "index.php";
-    $verif = file_exists("U:/59011-15-02/DWWM/".$nom."/index.php");
+    $verif = file_exists("D:/repo/DWWM/".$nom."/index.php");
     if($verif==false){
-        $f=fopen("U:/59011-15-02/DWWM/".$nom."/".$nomFile,"x+");
+        $f=fopen("D:/repo/DWWM/".$nom."/".$nomFile,"x+");
         $texte = "<?php\n";
         $texte .= "require(\"./Services/methodes.php\");\n";
         $texte .= "function chargementClasse(\$class){
@@ -107,9 +107,9 @@ function index($nom){
 
     function services($nom){
         $nomFile = "methodes.php";
-        $verif = file_exists("U:/59011-15-02/DWWM/".$nom."/Services/$nomFile");
+        $verif = file_exists("D:/repo/DWWM/".$nom."/Services/$nomFile");
         if($verif==false){
-            $f=fopen("U:/59011-15-02/DWWM/".$nom."/Services/".$nomFile,"x+");
+            $f=fopen("D:/repo/DWWM/".$nom."/Services/".$nomFile,"x+");
             $texte = "<?php\n\n";
             $texte .="function Nom (){\n\n}";
             fputs($f,$texte);

@@ -1,5 +1,5 @@
 U:
-cd U:\59011-15-02\DWWM
+cd D:\repo\DWWM
 git add . 
 git commit -m "%date% %time%"
 git push

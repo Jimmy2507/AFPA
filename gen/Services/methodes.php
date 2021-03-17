@@ -1,5 +1,5 @@
 <?php
-function generer($nomClass,$attribut){
+function generer($nomClass,$attribut,$chemin){
     $nomFile = $nomClass.".class.php";
     $verif = file_exists("./BDD/".$nomFile);
     if($verif == false){
