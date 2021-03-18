@@ -8,11 +8,11 @@ if (is_dir($nom)) {
 }
 // Création du nouveau répertoire
 else { 
-      mkdir("D:/repo/DWWM/".$nom);
+      mkdir("U:/59011-15-02/DWWM/".$nom);
       echo 'Le répertoire '.$nom.' vient d\'être créé!'."\n";      
 
-      mkdir("D:/repo/DWWM/".$nom."/class"); //Creation Dossier Class
-      mkdir("D:/repo/DWWM/".$nom."/Services");//Creation Dossier Services 
+      mkdir("U:/59011-15-02/DWWM/".$nom."/class"); //Creation Dossier Class
+      mkdir("U:/59011-15-02/DWWM/".$nom."/Services");//Creation Dossier Services 
       index($nom);      //Creation de l'index
       services($nom);   //Creation du fichier methode dans le dossier Services 
      do {
