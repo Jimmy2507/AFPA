@@ -1,0 +1,13 @@
+1. select * from clients
+2. select nomClient from clients
+3. select DISTINCT dateCommande From commandes
+4. select * from clients where prenomClient like 'sophie' 
+5. select idArticle from commandes where idClient = 2 
+6. select upper(nomClient) from clients
+7. select from clients
+8.select CONCAT (upper(left(nomClient,1)),LOWER(substring(nomClient,2))) from clients
+9. select nomClient from clients where length(nomClient)= 5 
+10.select nomClient from clients where nomClient like '__l%' or 't%' 
+11.SELECT idClient, idCommande, dateCommande, ADDDATE(dateCommande,15) FROM commandes;
+12. SELECT NOW()
+13. SELECT DATEDIFF(NOW(),dateEntreeClient) FROM clients;
