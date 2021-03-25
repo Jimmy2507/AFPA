@@ -1,0 +1,16 @@
+A.SELECT max(`cde_total`) FROM `commandes` 
+B.SELECT ROUND(AVG(`cde_total`),2) FROM `commandes`
+C.SELECT MIN(`cde_total`) FROM `commandes` 
+D.SELECT COUNT(*) FROM `commandes`
+E.SELECT cl.`NomClient`, cl.`PrenomClient`, ROUND(AVG(co.`cde_total`), 2) AS "montant moyen de commande" FROM `commandes` AS co INNER JOIN `clients` AS cl ON co.idClient = cl.idClient GROUP BY co.idClient;
+F.SELECT cl.`NomClient`, cl.`PrenomClient`, MAX(co.`cde_total`) AS "montant le plus élevé " FROM `commandes` AS co INNER JOIN `clients` AS cl ON co.idClient = cl.idClient GROUP BY co.idClient
+G. SELECT CONCAT(`nomClient`, " ", `prenomClient`) as nomClient, COUNT(idCommande) as "nb commandes" FROM `commandes` AS co INNER JOIN `clients` AS cl ON co.idClient = cl.idClient GROUP BY co.idClient
+H. SELECT CONCAT(`nomClient`, " ", `prenomClient`) as nomClient, ROUND(AVG(`quantiteCommande`),2) as "nb articles moyen" FROM `commandes` AS co INNER JOIN `clients` AS cl ON co.idClient = cl.idClient GROUP BY co.idClient
+I. SELECT articles.descriptionArticle, AVG(`quantiteCommande`) AS "moyenne des articles" FROM `commandes` INNER JOIN articles ON commandes.idArticle = articles.idArticle GROUP BY commandes.idArticle
+J. SELECT articles.descriptionArticle, SUM(`quantiteCommande`) AS "nb articles" FROM `commandes` INNER JOIN articles ON commandes.idArticle = articles.idArticle GROUP BY commandes.idArticle
+K.SELECT CONCAT(`nomClient`, " ", `prenomClient`) AS nomClient, co.dateCommande, ROUND(AVG(`quantiteCommande`), 2) AS "nb articles moyen" FROM commandes AS co INNER JOIN `clients` AS cl ON co.idClient = cl.idClient GROUP BY co.idClient, co.dateCommande
+L.SELECT `dateCommande`, COUNT(*) FROM `commandes` GROUP BY `dateCommande`
+M.SELECT COUNT(*) FROM `clients`
+N.SELECT COUNT(distinct idClient) FROM `commandes`
+O.SELECT COUNT(distinct idArticle) FROM `commandes`
+P.SELECT COUNT(distinct `dateCommande`) FROM `commandes`
