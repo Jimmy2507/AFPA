@@ -7,7 +7,7 @@ function generer($nomClass,$attribut,$nom){
         $texte = "<?php class $nomClass { \n";
         $texte .= "/*****************Attributs***************** */\n";
         for ($i=0; $i < count($attribut) ; $i++) { 
-            $texte .="\t private \$_".$attribut[$i].";\n";
+            $texte .="\t private \$_".lcfirst($attribut[$i]).";\n";
         }
         $texte .= "/*****************Accesseurs***************** */\n";
 
