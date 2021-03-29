@@ -1,0 +1,18 @@
+A. SELECT `nomEtudiant`, `prenomEtudiant`, `dateNaissanceEtudiant` FROM `etudiants` WHERE `dateNaissanceEtudiant` <( SELECT `dateNaissanceEtudiant` FROM `etudiants` WHERE `nomEtudiant` = "leclercq" AND prenomEtudiant = "jules" )
+B. SELECT CONCAT( etudiants.nomEtudiant, " ", etudiants.prenomEtudiant ) AS nom, note FROM etudiants INNER JOIN avoir_note ON etudiants.idEtudiant = avoir_note.idEtudiant WHERE avoir_note.idEpreuve = 4 AND note >( SELECT ROUND(AVG(note)) FROM avoir_note WHERE avoir_note.idEpreuve = 4 )
+C. SELECT e.nomEtudiant,e.prenomEtudiant, note FROM etudiants as e INNER JOIN avoir_note as a ON e.idEtudiant = a.idEtudiant WHERE note >=12
+D. SELECT e.nomEtudiant, e.prenomEtudiant, note FROM avoir_note AS a INNER JOIN etudiants AS e ON a.idEtudiant = e.idEtudiant WHERE note >( SELECT note FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant WHERE nomEtudiant = "DUPONT" AND prenomEtudiant = "LUC" AND avoir_note.idEpreuve = 4 ) AND a.idEpreuve = 4
+E. SELECT etudiants.nomEtudiant, etudiants.prenomEtudiant, note FROM avoir_note AS a INNER JOIN etudiants AS e ON a.idEtudiant = etudiants.idEtudiant WHERE note IN ( SELECT note FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant WHERE nomEtudiant = "DUPONT" AND prenomEtudiant = "LUC" )
+F. ALTER TABLE etudiants ADD HOBBY varchar(20) NOT NULL DEFAULT "Sport"
+G. ALTER TABLE etudiants ADD NewCol int 
+   ALTER TABLE etudiants DROP NewCol
+H. ALTER TABLE etudiants MODIFY prenomEtudiant VARCHAR(50) NOT NULL
+   ALTER TABLE etudiants CHANGE prenomEtudiant prenomEtudiant VARCHAR(50) NULL
+I. INSERT INTO `avoir_note`(`idAvoirNote`, `idEtudiant`, `idEpreuve`, `note`) VALUES (null,1,7,10),(null,2,7,8),(null,3,7,5),(null,4,7,9),(null,17,3,15);
+J. UPDATE avoir_note SET note = 7 WHERE idEtudiant=3 and idEpreuve=7
+K. UPDATE avoir_note SET note = note +1 WHERE idEtudiant=1 and idEpreuve=7
+L. DELETE FROM avoir_note WHERE idEpreuve=7
+   DELETE FROM epreuves WHERE idEpreuve=7
+M. ALTER TABLE `avoir_note` DROP FOREIGN KEY `FK_AvoirNote_Epreuves`
+   ALTER TABLE `avoir_note` ADD CONSTRAINT `FK_AvoirNote_Epreuves` FOREIGN KEY (`idEpreuve`) REFERENCES `epreuves`(`idEpreuve`) ON DELETE CASCADE ON UPDATE RESTRICT
+N.
