@@ -3,13 +3,12 @@ div{
     flex: 1;
 }
 .logo{
-    margin: 25px;
     background-image: url(./images/logo.jpg);
     background-repeat: no-repeat;
-    
+    width: 8vw;
 }
 .Sky{
     background-image: url(./images/sky.jpg);
     flex-direction: row;
-    height: 10vh;
+    height: 15vh;
 }
