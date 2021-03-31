@@ -1,0 +1,15 @@
+div{
+    display: flex ;
+    flex: 1;
+}
+.logo{
+    margin: 25px;
+    background-image: url(./images/logo.jpg);
+    background-repeat: no-repeat;
+    
+}
+.Sky{
+    background-image: url(./images/sky.jpg);
+    flex-direction: row;
+    height: 10vh;
+}
