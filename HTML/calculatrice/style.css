@@ -1,6 +1,22 @@
-body{
+body,html{
     background-color:beige;
+    padding: 0;
+    margin:0;
 }
-header{
-    background-color: black;
+#header{
+    background-color: gray;
+    height: 100px;
+}
+#header h1{
+    color: white;
+    text-align: center;
+}
+
+.Horizontale{
+    flex: none;
+    height: 1vh;
+}
+.Colonne{
+    flex-direction: column;
+    flex : 5vh;
 }
