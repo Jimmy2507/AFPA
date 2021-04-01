@@ -1,0 +1,41 @@
+body{
+    background-color: antiquewhite;
+}
+nav{
+    display: flex;
+    width: 50vw;
+}
+div{
+    display: flex;
+    flex: 1;
+}
+.bouton{
+    background-color: #ccc;
+    border: black 1px solid;
+    justify-content: center;
+    padding: 1em;
+    border-radius: 0.6em;
+    align-items: center;
+    flex-direction: column;
+}
+.Menu:hover{
+    background-color: red;
+    box-shadow: 0.1em 0.1em 0.1em black;
+}
+.Menu:hover .sousMenu{
+    display: flex;
+}
+.espace{
+    flex: 0.8;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.Menu{
+    flex-direction: column;
+}
+.sousMenu{
+    display: none;
+    flex-direction: column;
+}
