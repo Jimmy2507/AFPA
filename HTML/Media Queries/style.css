@@ -1,0 +1,58 @@
+html, body {
+    height:100vh;
+    margin:0;
+}
+
+ header {
+    height:24vh;
+    background: red;
+    width:100vw;
+}
+
+.contenu {
+    background:#0c9;
+    flex-direction: row;
+    display: flex;
+    height:100%;
+    
+}
+
+
+.Titre{
+    color: aliceblue;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    position: absolute;
+    left: 34%;
+    top: 3%;
+}
+
+.logo{
+    height:100px ;
+    width:100px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left:5%;
+    top:4%;
+}
+
+.img1{
+    flex:1;
+    height:300px ;
+    width:300px;
+    left : 12%;
+    top: 37%;
+    border-radius: 50%;
+}
+.texte{
+    position: absolute;
+    left:20%;
+    flex:0.5;
+    shape-outside: circle();
+}
+
+@media screen {
+    
+}
+

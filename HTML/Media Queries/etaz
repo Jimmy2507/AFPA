@@ -1,0 +1,12 @@
+.img1{
+    flex:1;
+    display: block;
+    position:absolute;
+    height:300px ;
+    width:300px;
+    background-repeat: no-repeat;
+    left : 12%;
+    top: 37%;
+    float:left;
+    border-radius: 50%;
+}

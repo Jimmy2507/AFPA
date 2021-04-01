@@ -1,13 +1,25 @@
-body{
-    background-color: antiquewhite;
+html, body {
+    height:100vh;
+    margin:0;
 }
-nav{
-    display: flex;
-    width: 50vw;
+
+ header {
+    height:15vh;
+    background:red;
+    width:100vw;
 }
-div{
-    display: flex;
-    flex: 1;
+
+#contenu {
+    padding:60px 0;
+    background:#0c9;
+}
+
+#contenu div {
+    width:80%;
+    height:1500px;
+    margin:auto;
+    border:solid;
+
 }
 .bouton{
     background-color: #ccc;
@@ -36,4 +48,16 @@ a{
 .sousMenu{
     display: none;
     flex-direction: column;
+}
+nav{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    background-color: #0c9;
+    width:100vw;
+    flex : 1;
+    display: flex;
+}
+.espace{
+    flex: 0.8;
 }
