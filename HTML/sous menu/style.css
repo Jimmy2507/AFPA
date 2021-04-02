@@ -19,8 +19,7 @@ div{
     flex-direction: column;
 }
 .Menu:hover{
-    background-color: red;
-    box-shadow: 0.1em 0.1em 0.1em black;
+    background-color: black;
 }
 .Menu:hover .sousMenu{
     display: flex;

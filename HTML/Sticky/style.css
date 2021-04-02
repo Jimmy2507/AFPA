@@ -1,27 +1,33 @@
 html, body {
     height:100vh;
     margin:0;
+    background-color: #0c9;
 }
 
  header {
     height:15vh;
-    background:red;
+    background:black;
     width:100vw;
 }
 
 #contenu {
     padding:60px 0;
     background:#0c9;
+    position: relative;
+    z-index: 1;
 }
 
-#contenu div {
+#contenu div { 
+    z-index: 2;
     width:80%;
     height:1500px;
     margin:auto;
     border:solid;
+    
 
 }
 .bouton{
+    z-index: 3;
     background-color: #ccc;
     border: black 1px solid;
     justify-content: center;
@@ -32,7 +38,7 @@ html, body {
 }
 .Menu:hover{
     background-color: red;
-    box-shadow: 0.1em 0.1em 0.1em black;
+    box-shadow: 0.1em 0.1em 0.1em white;
 }
 .Menu:hover .sousMenu{
     display: flex;
@@ -50,14 +56,14 @@ a{
     flex-direction: column;
 }
 nav{
-    position: -webkit-sticky;
     position: sticky;
-    top: 0px;
-    background-color: #0c9;
+    top: 0vh;
+    z-index: 3;
     width:100vw;
     flex : 1;
     display: flex;
 }
 .espace{
-    flex: 0.8;
+    z-index: 1;
+    flex: 1;
 }
