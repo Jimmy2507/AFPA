@@ -1,14 +1,95 @@
+body{
+    flex-direction: column;
+    background-image: url(./images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0vh;
+}
 div{
     display: flex ;
     flex: 1;
 }
 .logo{
-    background-image: url(./images/logo.jpg);
     background-repeat: no-repeat;
-    width: 8vw;
+    height:100px ;
+    width:150px;
+    position: absolute;
+    left: 5vh;
+    top: 2.5vh;
 }
-.Sky{
+header{
     background-image: url(./images/sky.jpg);
+    display: flex;
     flex-direction: row;
     height: 15vh;
+    background-size: cover;
 }
+
+.titre{
+    align-items: center;
+
+}
+main{
+    display: flex;
+    flex-direction: column;
+}
+.texte{
+    background-color: white;
+}
+.Case1{
+    flex: 1;
+}
+.texte2{
+    background-color: white;
+}
+.EspaceH{
+    flex: none;
+    height: 10vh;
+}
+.EspaceV{
+    flex-direction: column;
+
+}
+.Destination{
+    flex-direction: column;
+}
+.Pligne{
+    flex-direction: row;
+    flex: 1;
+}
+.EspaceH2{
+    flex: none;
+    height: 2vh;
+}
+.Paris{
+    background-image: url("./images/08.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Londres{
+    background-image: url("./images/07.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Rome{
+    background-image: url("./images/06.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Bali{
+    background-image: url("./images/05.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.TitreDestination{
+    flex: 1;
+}
+
+
+
+footer{
+    background-image: url("./images/pp.jpg");
+}
+
