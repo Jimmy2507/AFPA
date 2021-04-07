@@ -1,8 +1,8 @@
 <section id="contenu">
-    <div class="Contour Colonne">
+    <div class="Contour Ligne">
         <div>
             <div class="EspaceVertical"></div>
-            <div class="Colonne Paragraphe">
+            <div class="Ligne Paragraphe">
                 
                 <?php
                     $personne[]= new Personne(array("Prenom"=>"Toto","Nom"=>"Tata","Age"=>18));
@@ -14,14 +14,12 @@
                         echo '<div class = "Titre">
                                 <h1>Personne n° '.$i.'</h1></div>
                         <div></div>
-                        <a href="detail.php?id='.$i.'">
-                            <div class="Texte">
-                                <div></div>
-                                    '.$personne[$i]->toString().'
-                                <div></div>
-                            </div>
-                        </a>
+                        <div class="Texte">
                             <div></div>
+                                '.$personne[$i]->toString().'
+                            <div></div>
+                        </div>
+                        <div></div>
                         ';
                     }
                 ?>

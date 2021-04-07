@@ -49,7 +49,10 @@ public function hydrate($data)
     */
    public function toString()
    {
-       return "";
+       $aff = "Prenom : ".$this->getPrenom()."<br>";
+       $aff .= "Nom : ".$this->getNom()."<br>";
+       $aff .= "Age : ".$this->getAge()." ans<br>";
+       return $aff;
    }
 
    /**

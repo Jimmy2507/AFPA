@@ -1,19 +1,19 @@
 <nav>
             <div class="espace"></div>
                 <div class="bouton">
-                    <a href="index2">2 éme page</a>
+                    <a href="index2">Afficher en ligne</a>
                 </div>
                 <div class="espace"></div>
                 <div class="bouton">
-                    <a href="index">Premiere Page</a>
+                    <a href="index">Afficher en colonne</a>
                 </div>
                 <div class="espace"></div>
                 <div class="bouton">
-                    <a href="index#ancre">Photo Page</a>
+                    <a href="">Bouton 3</a>
                 </div>
                 <div class="espace"></div>
                 <div class="bouton">
-                    <a href="index2#ancre2">Ancre Page 2</a>
+                    <a href="">Bouton 4</a>
                 </div>
                 <div class="espace"></div>
         </nav>

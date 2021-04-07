@@ -1,4 +1,4 @@
 <body>
 <header>
-    <div class="Titre">Site Test</div>
+    <div class="TitreSite">Site Test</div>
 </header>
