@@ -1,0 +1,94 @@
+html, body {
+    height:100vh;
+    margin:0;
+    background-color: #0c9;
+}
+
+ header {
+    height:15vh;
+    background:black;
+    width:100vw;
+}
+
+#contenu {
+    padding:60px 0;
+    background:#0c9;
+    position: relative;
+    z-index: 1;
+}
+div{
+    display: flex;
+    flex: 1;
+}
+
+#contenu .Contour { 
+    z-index: 2;
+    width:80%;
+    height:1500px;
+    margin:auto;
+    border:solid;
+}
+.bouton{
+    z-index: 3;
+    background-color: #ccc;
+    border: black 1px solid;
+    justify-content: center;
+    padding: 1em;
+    border-radius: 0.6em;
+    align-items: center;
+    flex-direction: column;
+}
+.Menu:hover{
+    background-color: red;
+    box-shadow: 0.1em 0.1em 0.1em white;
+}
+.Menu:hover .sousMenu{
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.Menu{
+    flex-direction: column;
+}
+.sousMenu{
+    display: none;
+    flex-direction: column;
+}
+nav{
+    position: sticky;
+    top: 0vh;
+    z-index: 3;
+    width:100vw;
+    flex : 1;
+    display: flex;
+}
+.espace{
+    z-index: 1;
+    flex: 1;
+}
+.EsaceVertical{
+    display: flex;
+    flex: 0.5;
+}
+.Colonne{
+    flex-direction: column;
+}
+.Paragraphe{
+    flex:5;
+    text-align: justify;
+}
+.Titre{
+    flex: none;
+    justify-content: center;
+}
+.Photo{
+    background-image: url('https://picsum.photos/200');
+    background-repeat: no-repeat;
+}
+.Texte{
+    flex: none;
+}
+
