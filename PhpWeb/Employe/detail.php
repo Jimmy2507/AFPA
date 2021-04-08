@@ -4,7 +4,7 @@ include "Contenu/header.php";
 include "Contenu/listeEmploye.php";
 
     echo '<div class = "Titre">
-            <h1>Employe n° '.$_GET["id"].'</h1></div>
+            <h1>Detail de l\'employe '.$employe[$_GET["id"]]->getPrenom().'</h1></div>
     <div></div>
         <div class="Texte">
             <div></div>
