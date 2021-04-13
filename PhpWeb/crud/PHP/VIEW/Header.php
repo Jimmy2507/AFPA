@@ -13,6 +13,6 @@
         }
        
         ?>
-        <div class="titre">TITRE DE LA PAGE</div>
+            <div class="TitreSite">Site Test</div>
         <div></div>
     </header>
