@@ -1,0 +1,91 @@
+html, body {
+    height:100vh;
+    margin:0;
+    background-color: #999999;
+}
+
+ header {
+    height:15vh;
+    background:#444444;
+    width:100vw;
+}
+
+#contenu {
+    padding:60px 0;
+    background:#999999;
+    position: relative;
+    z-index: 1;
+}
+div,a{
+    display: flex;
+    flex: 4;
+}
+
+#contenu .Contour { 
+    z-index: 2;
+    width:80%;
+    height: 1500px;
+    margin:auto;
+    border:solid;
+}
+.bouton{
+    z-index: 3;
+    background-color: #ccc;
+    border: black 1px solid;
+    justify-content: center;
+    padding: 1em;
+    border-radius: 0.6em;
+    align-items: center;
+    flex-direction: column;
+}
+.Menu{
+    flex-direction: column;
+}
+nav{
+    position: sticky;
+    top: 0vh;
+    z-index: 3;
+    width:100vw;
+    flex : 1;
+    display: flex;
+}
+.espace{
+    z-index: 1;
+    flex: 5;
+}
+.Colonne{
+    flex-direction: column;
+}
+.Paragraphe{
+    flex:2;
+    text-align: justify;
+}
+.Titre{
+    flex: none;
+    justify-content: center;
+}
+
+.Texte{
+    border: 1px solid black;
+}
+
+.Ligne{
+    flex-direction: row;
+}
+
+.TitreSite{
+    color: aliceblue;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    justify-content: center;
+}
+
+label
+{
+	width: 150px;
+}
+
+
+
+
