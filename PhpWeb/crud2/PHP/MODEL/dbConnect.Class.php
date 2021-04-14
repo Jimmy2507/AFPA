@@ -7,7 +7,7 @@
             }
             public static function init() {
                 try {
-                    self::$db= new PDO ( 'mysql:host=localhost;dbname=testmdp;charset=utf8', 'root', '');
+                    self::$db= new PDO ( 'mysql:host=localhost;dbname=application;charset=utf8', 'root', '');
                 } catch ( Exception $e ) {
                     die ( 'Erreur : ' . $e->getMessage () );
                 }
