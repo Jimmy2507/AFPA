@@ -1,13 +1,13 @@
 <?php
 $listeProduits = ProduitsManager::getList();
 echo '<div class="liste colonne">';
-echo '<a href="PHP/VIEW/FormProduits.php?mode=ajout"> <button>Ajouter</button></a>';
+echo '<a href="PHP/VIEW/FormProduits.php?mode=ajout"> <button>Ajouter</button></a> ';
   
 if (count($listeProduits)>0)
 {
     foreach ($listeProduits as $pdt)
     {
-        echo '<div> <div class = "client">' . $pdt->getLibelleProduit() . '</div>';
+        echo '<div> <div class = "produit">' . $pdt->getLibelleProduit() . '</div>';
         echo '<div class="btn">
    <a href="PHP/VIEW/FormProduits.php?mode=detail&id=' . $pdt->getIdProduit() . '"> <button>Détail Formulaire</button></a>
     <div class="mini"></div>

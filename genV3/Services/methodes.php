@@ -1,9 +1,9 @@
 <?php
-function generer($nomClass,$attribut,$nom){
+function genererClass($nomClass,$attribut,$nom){
     $nomFile = $nomClass.".class.php";
-    $verif = file_exists("U:/59011-15-02/DWWM/".$nom."/class/".$nomFile);
+    $verif = file_exists("U:/59011-15-02/DWWM/".$nom."/PHP/CONTROLLER/".$nomFile);
     if($verif == false){
-        $f = fopen("U:/59011-15-02/DWWM/".$nom."/class/".$nomFile,"x+");
+        $f = fopen("U:/59011-15-02/DWWM/".$nom."/PHP/CONTROLLER/".$nomFile,"x+");
         $texte = "<?php class $nomClass { \n";
         $texte .= "/*****************Attributs***************** */\n";
         for ($i=0; $i < count($attribut) ; $i++) { 
@@ -91,11 +91,8 @@ function index($nom){
     if($verif==false){
         $f=fopen("U:/59011-15-02/DWWM/".$nom."/".$nomFile,"x+");
     $texte = "<?php\n";
-    $texte .= "require(\"./Services/methodes.php\");\n";
-    $texte .= "function chargementClasse(\$class){
-    require(\"./class/\".\$class.\".class.php\");
-}
-    spl_autoload_register(\"chargementClasse\");\n";
+    $texte .= "
+    include \"PHP/VIEW/Head.php\";";
 
     fputs($f,$texte);
     fclose($f);
@@ -104,22 +101,120 @@ function index($nom){
         echo "Le fichier existe deja ! \n";
     }
 }
-
-    function services($nom){
-        $nomFile = "methodes.php";
-        $verif = file_exists("U:/59011-15-02/DWWM/".$nom."/Services/$nomFile");
+    function CSS($nom){
+        $nomFile = "style.css";
+        $verif = file_exists("U:/59011-15-02/DWWM/".$nom."/CSS/style.css");
         if($verif==false){
-            $f=fopen("U:/59011-15-02/DWWM/".$nom."/Services/".$nomFile,"x+");
-            $texte = "<?php\n\n";
-            $texte .="function Nom (){\n\n}";
-            fputs($f,$texte);
+            $f=fopen("U:/59011-15-02/DWWM/".$nom."/CSS/".$nomFile,"x+");
             fclose($f);
-            echo "Fichier methodes crée.\n";
+        echo "style crée \n";
         }else{
-            echo "Le fichier existe deja ";
-
+            echo "Fichier CSS deja crée";
         }
-    
     }
-    //A FAIRE : CREATION DES METHODES DANS LES CLASSE 
+
+    function dbConnect($nom,$nomBDD){
+        $nomFile = "dbConnect.Class.php";
+        $verif = file_exists("U:/59011-15-02/DWWM/".$nom."/dbConnect.Class.php");
+        if($verif==false){
+            $f=fopen("U:/59011-15-02/DWWM/".$nom."/PHP/MODEL/".$nomFile,"x+");
+        $texte = "<?php\n";
+        $texte .= "
+        class DbConnect {
+            private static \$db;
+            public static function getDb() {
+                return DbConnect::\$db;
+            }
+            public static function init() {
+                try {
+                    self::\$db= new PDO ( 'mysql:host=localhost;dbname=".$nomBDD.";charset=utf8', 'root', '');
+                } catch ( Exception \$e ) {
+                    die ( 'Erreur : ' . \$e->getMessage () );
+                }
+                
+            }
+        }";
+        fputs($f,$texte);
+        fclose($f);
+        echo "dbConnect Crée \n";
+        }else{
+            echo "Le fichier existe deja ! \n";
+        }
+    }
+
+    function Manager($nom,$nomBDD,$nomClass){
+        $nomFile = $nomClass."Manager.Class.php";
+        $verif = file_exists("U:/59011-15-02/DWWM/".$nom."/".$nomFile);
+        if($verif==false){
+            $f=fopen("U:/59011-15-02/DWWM/".$nom."/PHP/MODEL/".$nomFile,"x+");
+        $texte = "<?php\n";
+        $texte .= "";
+        fputs($f,$texte);
+        fclose($f);
+        echo "Manager Crée \n";
+        }else{
+            echo "Le fichier existe deja ! \n";
+        }
+    }
+
+    function CreeHead($nom){
+        $nomFile = "Head.php";
+        $verif = file_exists("U:/59011-15-02/DWWM/".$nom."/".$nomFile);
+        if($verif==false){
+            $f=fopen("U:/59011-15-02/DWWM/".$nom."/PHP/VIEW/".$nomFile,"x+");
+        $texte = "<!DOCTYPE html>
+                  <html lang=\"fr\">\n";
+        $texte .= "<head>
+        <meta charset=\"UTF-8\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+        <title>Document</title>
+        <?php
+        if (file_exists(\"./CSS/style.css\"))
+            {
+                echo '<link rel=\"stylesheet\" href=\"./CSS/style.css\">'; // quand on vient de index.php
+            }
+            else if (file_exists(\"../../CSS/style.css\"))
+            {
+                echo '<link rel=\"stylesheet\" href=\"../../CSS/style.css\">';  // quand on vient du dossier VIEW
+            }
+            ?>
+    </head>
+    
+    <?php
+    /* Autoload permet de charger toutes les classes necessaires */
+    function ChargerClasse(\$classe)
+    {
+        if (file_exists(\"PHP/CONTROLLER/\" . \$classe . \".Class.php\"))
+        {
+            require \"PHP/CONTROLLER/\" . \$classe . \".Class.php\"; // quand on vient de index.php
+        }
+        else if (file_exists(\"../CONTROLLER/\" . \$classe . \".Class.php\"))
+        {
+            require \"../CONTROLLER/\" . \$classe . \".Class.php\"; // quand on vient du dossier VIEW
+        }
+        if (file_exists(\"PHP/MODEL/\" . \$classe . \".Class.php\"))
+        {
+            require \"PHP/MODEL/\" . \$classe . \".Class.php\"; // quand on vient de index.php
+        }
+        else if (file_exists(\"../MODEL/\" . \$classe . \".Class.php\"))
+        {
+            require \"../MODEL/\" . \$classe . \".Class.php\"; // quand on vient du dossier VIEW
+    
+        }
+    }
+    spl_autoload_register(\"ChargerClasse\");
+    
+    DbConnect::init();";
+        fputs($f,$texte);
+        fclose($f);
+        echo "Head Crée \n";
+
+        }else{
+            echo "Le fichier existe deja ! \n";
+        }
+    }
+
+
+
+
 ?>
