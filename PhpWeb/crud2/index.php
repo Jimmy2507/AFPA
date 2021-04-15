@@ -15,11 +15,10 @@ function crypte($mot) //fonction qui crypte le mot de passe
 }
 $routes = [
     "default"=>["PHP/VIEW/","Accueil","Accueil"],
-    "inscription" => ["PHP/VIEW/", "FormUser", "Identification"],
+    "inscription" => ["PHP/VIEW/", "FormInscription", "Identification"],
     "actionInscription" => ["PHP/VIEW/", "actionInscription", "xx"],
     "connection" => ["PHP/VIEW/", "FormConnection", "Identification"],
     "actionConnection" => ["PHP/VIEW/", "actionConnection", "xx"],
-    "FormUser"=>["PHP/VIEW/","FormUser","Formulaire Utilisateur"],
     "ActionUser"=>["PHP/VIEW/","ActionUser","Action User"]
 ];
 

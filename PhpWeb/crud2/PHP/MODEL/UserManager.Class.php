@@ -57,4 +57,25 @@ class UserManager
             }
             return $listeProduits;
     }
+    public static function findByPseudo($pseudo)
+    {
+		$db = DbConnect::getDb();
+        if (!in_array(";",str_split( $pseudo))) // s'il n'y a pas de ; , je lance la requete
+        {
+            $q = $db->query("SELECT * FROM user WHERE username ='" . $pseudo . "'");
+            $results = $q->fetch(PDO::FETCH_ASSOC);
+            if ($results != false)
+            {
+                return new User($results);
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

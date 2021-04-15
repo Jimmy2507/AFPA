@@ -1,111 +1,50 @@
-<?php
-$mode = $_GET['mode'];
 
-echo '<div class="Espace"></div>
+<div class="Espace"></div>
     <div class="Block Ligne">
         <div class="BlockGauche "></div>
         <div class="Blocktexte Colonne">
             <div class="entete Ligne">
-                <div class="Editer Colonne">Profiles : </div>
-            </div> <div id="DivSousTitre">';
-if (isset($_GET['id']))
-{
-    $user = UserManager::findById($_GET['id']);
-    $idUser = $user->getIdUser();
-}
-else
-{
-    $user = new User();
-    $idCateg = 1;
-}
+                <div class="Editer Colonne">S'inscrire : </div>
+            </div> <div id="DivSousTitre">
+        </div>
+<?php
 $listeRole=RolesManager::getList();
-//en fonction du mode, on modifie l'entet du form
-switch ($mode)
-{
-    case "ajouter":
-            
-            $sousTitre = '<h5>Ajouter un nouveau utilisateur</h5></div>';
-            $dis = "";
-            $submit = '<div class="ligneDetail"><input type="submit" value="Ajouter" class=" crudBtn crudBtnEdit"/>';
-            break;
-        
-    case "modifier":
-            
-            $sousTitre = '<h5>Modifier un  utilisateur</h5></div>';
-            $dis = "";
-            $submit = '<div class="ligneDetail"><input type="submit" value="Modifier" class=" crudBtn crudBtnModif"/>';
-            break;
-        
-    case "supprimer":
-            
-            $sousTitre = '<h5>Supprimer un  utilisateur</h5></div>';
-            $dis = " disabled ";
-            $submit = '<div class="ligneDetail"><input type="submit" value="Supprimer" class=" crudBtn crudBtnSuppr"/>';
-            break;
-
-    case "detail":
-    
-        $sousTitre = '<h5>Detail de l\'utilisateur</h5></div>';
-        $dis = " disabled ";
-        $submit = '<div class="ligneDetail"><input type="submit" value="Valider" class=" crudBtn crudBtnSuppr"/>';
-        break;
-    
-}
-echo $sousTitre;
-echo '<form id="formulaire" method="post" action="index.php?page=ActionUser&mode=' . $mode . '">';
-if ($mode != "ajouter")
-{
-    echo '
-            <input type="hidden" name="idUser" value="' . $user->getIdUser() . '">';
-}
-
-echo '
-            <div class="ligneDetail">
-                <div class="libelleInput"> User Name :</div>
-                <div class="input"> <input type="text" name="username"
-                    value="' . $user->getUsername() . '" ' . $dis . '></div>
-                </div>
-            <div class="ligneDetail">
-                <div class="libelleInput">
-                    Password :</div>';
-                     if($mode!="detail"){
-                      echo' <div class="input"> 
-                                <input type="password" name="password" value="' . $user->getPassword() . '" ' . $dis . '> ';
-                     }else{
-                          echo'<div class="input">
-                            <input type="text" name="password" value="' . $user->getPassword() . '" ' . $dis . '> ';
-                     }
-                echo'
-                </div>
-            </div>
-            <div class="ligneDetail">
-                <div class="libelleInput">Role  :</div>
-                <div class="input">
-            <select name="idRole" >';
-
-foreach ($listeRole as $role)
-{
-    if($mode!= "ajouter"){
-        $sel = "";
-            if ($role->getIdRole() == $user->getIdRole())
-            {
-                $sel = "selected";
-            }    
-    }
-
-    echo '<option value="' . $role->getIdRole() . '" ' . $sel .$dis. ' >' . $role->getNomRole() . '</option>';
-}
-
-echo '
-</select></div>
-</div>';
-echo $submit;
-// dans tous les cas, on met le bouton annuler
 ?>
+
+<form action="index.php?codePage=actionInscription" method="POST">
+    <div>
+        <label for="username">UserName</label>
+        <input type="text" name="username" required />
+    </div>
+    <div class="espaceHor"></div>
+    <div>
+        <label for="password">mot De Passe</label>
+        <input type="password" name="password" required />
+    </div>
+    <div class="espaceHor"></div>
+    <div>
+        <label for="confirmation">Confirmation du mot de passe</label>
+        <input type="password" name="confirmation" required />
+    </div>
+    <div class="espaceHor"></div>
+    <div>
+        <label for="role">Role (1 admin 2 user)</label>
+        <input type="text" name="role" required />
+    </div>
+    <div class="espaceHor"></div>
+    <div>
+    <div class="espaceHor"></div>
+    <div><button type="submit">Valider</button></div>
+    
+</form>
+
+</div>
+<div class="EspaceH"></div>
+
     <a href="?page=ListeUser" class=" crudBtn crudBtnRetour">Retour</a>
 
 </div>
-    <div class="EspaceH"></div>
+    
         </div>
         <div class="BlockGauche "></div>
     </div>
