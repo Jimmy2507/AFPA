@@ -16,18 +16,19 @@ if (count($listeUser)>0) {
       echo '
             <div class="username">User Name:'.$u->getUsername().'</div>
             <div class="Utilisateur">
-            <a href="?page=FormUser&mode=detail&id='.$u->getIdUser().'"><button class="btn">Detail</button></a>
-            <a href="?page=FormUser&mode=modifier&id='.$u->getIdUser().'"><button class="btn">Modifier</button></a>
-            <a href="?page=FormUser&mode=supprimer&id='.$u->getIdUser().'"><button class="btn">Supprimer</button></a>  
+                <a href="?page=FormUser&mode=detail&id='.$u->getIdUser().'"><button class="btn">Detail</button></a>
+                <a href="?page=FormUser&mode=modifier&id='.$u->getIdUser().'"><button class="btn">Modifier</button></a>
+                <a href="?page=FormUser&mode=supprimer&id='.$u->getIdUser().'"><button class="btn">Supprimer</button></a>  
             </div> 
     ';   
     }       echo'<div class="EspaceH"></div> 
-    </div> 
+        </div> 
         <div class="BlockGauche "></div> 
     </div>';
    
 }else{
-    echo '<h1>Pas D\'utilisateur !</h1>
+    echo '<h1 style="text-align: center;">Pas D\'utilisateur !</h1>
+        <div class="EspaceH"></div>
         </div> 
         <div class="BlockGauche "></div> 
     </div>';

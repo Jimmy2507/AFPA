@@ -10,7 +10,6 @@ switch ($_GET['mode']) {
             break;
         
     case "modifier":
-        
             UserManager::update($u);
             break;
         
