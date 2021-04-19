@@ -6,7 +6,7 @@
                 <div class="Editer Colonne"><h1>Connexion : </h1></div>
             </div> 
 
-        <form action="index.php?codePage=actionConnection" method="post">
+        <form action="index.php?page=actionConnection" method="post">
             <div>
                 <label for="username">pseudo : </label>
                 <input type="text" name="username" required />
@@ -20,7 +20,7 @@
             <div><button type="submit">Valider</button></div>
         </form>
         <div class="espaceHor"></div>
-        <div><a href="index.php?codePage=Accueil">Retour</a></div>
+        <div><a href="index.php?page=Accueil">Retour</a></div>
 <div class="EspaceH"></div>
         </div> 
         <div class="BlockGauche "></div> 

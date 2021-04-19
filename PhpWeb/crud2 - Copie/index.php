@@ -6,19 +6,14 @@ function afficherPage($page){
  include "PHP/VIEW/Head.php";
  include "PHP/VIEW/Header.php";
  include "PHP/VIEW/nav.php";
+ include "PHP/VIEW/footer.php";
  include $chemin.$nom.".php";
  include "PHP/VIEW/footer.php";    
 }
-function crypte($mot) //fonction qui crypte le mot de passe
-{
-    return md5(md5($mot) . strlen($mot));
-}
+
 $routes = [
-    "default"=>["PHP/VIEW/","Accueil","Accueil"],
-    "inscription" => ["PHP/VIEW/", "FormInscription", "Identification"],
-    "actionInscription" => ["PHP/VIEW/", "ActionInscription", "xx"],
-    "connection" => ["PHP/VIEW/", "FormConnection", "Identification"],
-    "actionConnection" => ["PHP/VIEW/", "actionConnection", "xx"],
+    "default"=>["PHP/VIEW/","ListeUser","Liste des Utilisateur"],
+    "FormUser"=>["PHP/VIEW/","FormUser","Formulaire Utilisateur"],
     "ActionUser"=>["PHP/VIEW/","ActionUser","Action User"]
 ];
 

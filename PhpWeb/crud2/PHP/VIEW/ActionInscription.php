@@ -1,10 +1,10 @@
 <?php
 
 // var_dump($_POST);
-if ($_POST['motDePasse'] == $_POST['confirmation'])
+if ($_POST['password'] == $_POST['confirmation'])
 {
     // recherche si le pseudo existe
-    $uti = UserManager::findByPseudo($_POST['pseudo']);
+    $uti = UserManager::findByPseudo($_POST['username']);
     if ($uti == false)
     {
         $u = new User($_POST);

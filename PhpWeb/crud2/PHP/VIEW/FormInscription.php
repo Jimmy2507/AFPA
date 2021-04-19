@@ -11,7 +11,7 @@
 $listeRole=RolesManager::getList();
 ?>
 
-<form action="index.php?codePage=actionInscription" method="POST">
+<form action="index.php?page=actionInscription" method="POST">
     <div>
         <label for="username">UserName</label>
         <input type="text" name="username" required />
@@ -29,7 +29,7 @@ $listeRole=RolesManager::getList();
     <div class="espaceHor"></div>
     <div>
         <label for="role">Role (1 admin 2 user)</label>
-        <input type="text" name="role" required />
+        <input type="text" name="idRole" required />
     </div>
     <div class="espaceHor"></div>
     <div>
