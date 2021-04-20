@@ -25,12 +25,13 @@ else {
             $nomClass = readline("Nom de la classe (stop):");  //Demande nom de la classe
             
             if(strtolower($nomClass)!= "stop"){
-            Manager($nom,$nomBDD,$nomClass);//CREATION MANAGER PAS FINI
+           
             do {
                   $attribut[] = readline("Nom de l'attribut (stop pour stop) : ");
             } while (strtolower(end($attribut)) != "stop");
             array_pop($attribut); //enleve derniere case du tableau d'attribut (stop)
             genererClass($nomClass,$attribut,$nom); //genere la classe
+            Manager($nom,$nomBDD,$nomClass,$attribut);//CREATION MANAGER PAS FINI
             }else{
                   break;
             }

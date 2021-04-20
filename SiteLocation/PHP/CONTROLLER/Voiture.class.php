@@ -13,10 +13,10 @@ public function setIdVoiture($idVoiture){
 	$this->_idVoiture = $idVoiture;
 }
 public function getModelVoiture(){
-	return $this->_ModelVoiture;
+	return $this->_modelVoiture;
 }
-public function setModelVoiture($ModelVoiture){
-	$this->_ModelVoiture = $ModelVoiture;
+public function setModelVoiture($modelVoiture){
+	$this->_modelVoiture = $modelVoiture;
 }
 public function getMarqueVoiture(){
 	return $this->_marqueVoiture;

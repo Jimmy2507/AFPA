@@ -1,4 +1,4 @@
-<?php class model { 
+<?php class Model { 
 /*****************Attributs***************** */
 	 private $_idModel;
 	 private $_nomModel;
@@ -12,10 +12,10 @@ public function setIdModel($idModel){
 	$this->_idModel = $idModel;
 }
 public function getNomModel(){
-	return $this->_nomModel;
+	return $this->_NomModel;
 }
-public function setNomModel($nomModel){
-	$this->_nomModel = $nomModel;
+public function setNomModel($NomModel){
+	$this->_NomModel = $NomModel;
 }
 public function getIdMarque(){
 	return $this->_idMarque;

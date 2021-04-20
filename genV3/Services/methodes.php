@@ -141,14 +141,71 @@ function index($nom){
             echo "Le fichier existe deja ! \n";
         }
     }
-
-    function Manager($nom,$nomBDD,$nomClass){
+    //***************************CREATION MANAGER ************************************ */
+    function Manager($nom,$nomBDD,$nomClass,$attribut){
         $nomFile = $nomClass."Manager.Class.php";
         $verif = file_exists("U:/59011-15-02/DWWM/".$nom."/".$nomFile);
         if($verif==false){
             $f=fopen("U:/59011-15-02/DWWM/".$nom."/PHP/MODEL/".$nomFile,"x+");
-        $texte = "<?php\n";
-        $texte .= "";
+            //FONCTION AJOUTER DANS LA BDD
+$texte = "<?php\n";
+$texte .= 'class '.$nomClass."Manager{\n";
+$texte .= 'public static function add('.$nomClass.' $objet){
+    $db = DbConnect::getDb();
+    $q = $db->prepare("INSERT INTO '.$nomClass.'(';
+        for ($i=0; $i < count($attribut) ; $i++) { 
+            $texte .=$attribut[$i].',';
+        }
+        $texte.=') VALUES (';
+        for ($i=0; $i < count($attribut); $i++) { 
+            $texte .= ":".$attribut[$i].',';
+        }
+        $texte .= ")\");\n";
+        for ($i=0; $i < count($attribut); $i++) { 
+            $texte .= '$q->bindValue(":'.$attribut[$i].'",$objet->get'.ucfirst($attribut[$i])."());\n";
+        }
+        $texte .='$q->execute();
+            }'."\n\n";
+        //************************UPDATE BDD ***************************************************** */
+        $texte .=' public static function update('.$nomClass.' $objet'."){\n";
+        $texte .= "\t".'$db = DbConnect::getDb();';
+        $texte .= "\t".'$q = $db->prepare("UPDATE '.$nomClass.' SET ** WHERE **");'."\n";
+            for ($i=0; $i < count($attribut); $i++) { 
+                $texte .= '$q->bindValue(":'.$attribut[$i].'",$objet->get'.ucfirst($attribut[$i])."());\n";
+            }
+        $texte .="\t".'$q->execute();'."\n}\n\n";
+
+        //******************************SUPPRIMER BDD************************************************ */
+            $texte .= 'public static function delete('.$nomClass.' $objet){'."\n";
+            $texte .= '$db = DbConnect::getDb();'."\n";
+            $texte .= '$db->exec("DELETE FROM '.$nomClass.' WHERE id'.ucfirst($nomClass).'=" . $objet->getId'.ucfirst($nomClass).'());'."\n}\n\n";
+
+        //******************************findById******************************************************** */
+
+            $texte.='public static function findById($id){
+    $db = DbConnect::getDb();
+    $id = (int) $id;  //Verifie pour eviter injection sql
+    $q = $db->query("SELECT * FROM '.$nomClass.' WHERE id'.$nomClass.'=" . $id);
+    $results = $q->fetch(PDO::FETCH_ASSOC);
+        if ($results != false){
+            return new '.$nomClass.'($results);
+        }
+        else{
+            return false;
+        }
+    }';
+        //*****************************************getList *********************************************** */
+            $texte .= 'public static function getList(){
+    $db = DbConnect::getDb();
+    $liste = [];
+    $q = $db->query("SELECT * FROM '.$nomClass.' order by nomRole");
+    while ($donnees = $q->fetch(PDO::FETCH_ASSOC)){
+        if ($donnees != false){
+            $liste[] = new '.$nomClass.'($donnees);
+        }
+    }
+    return $liste;  // tableau contenant les objets Roles
+}'."\n\n}";
         fputs($f,$texte);
         fclose($f);
         echo "Manager Crée \n";

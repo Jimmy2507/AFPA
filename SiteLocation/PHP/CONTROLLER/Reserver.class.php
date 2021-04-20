@@ -1,19 +1,54 @@
-<?php class Marque { 
+<?php class Reserver { 
 /*****************Attributs***************** */
-	 private $_idMarque;
-	 private $_nomMarque;
+	 private $_idUser;
+	 private $_idVoiture;
+	 private $_idAgence;
+	 private $_dateReservation;
+	 private $_dateDebutReservation;
+	 private $_dateFinReservation;
+	 private $_quantite;
 /*****************Accesseurs***************** */
-public function getIdMarque(){
-	return $this->_idMarque;
+public function getIdUser(){
+	return $this->_idUser;
 }
-public function setIdMarque($idMarque){
-	$this->_idMarque = $idMarque;
+public function setIdUser($idUser){
+	$this->_idUser = $idUser;
 }
-public function getNomMarque(){
-	return $this->_NomMarque;
+public function getIdVoiture(){
+	return $this->_idVoiture;
 }
-public function setNomMarque($NomMarque){
-	$this->_NomMarque = $NomMarque;
+public function setIdVoiture($idVoiture){
+	$this->_idVoiture = $idVoiture;
+}
+public function getIdAgence(){
+	return $this->_idAgence;
+}
+public function setIdAgence($idAgence){
+	$this->_idAgence = $idAgence;
+}
+public function getDateReservation(){
+	return $this->_dateReservation;
+}
+public function setDateReservation($dateReservation){
+	$this->_dateReservation = $dateReservation;
+}
+public function getDateDebutReservation(){
+	return $this->_dateDebutReservation;
+}
+public function setDateDebutReservation($dateDebutReservation){
+	$this->_dateDebutReservation = $dateDebutReservation;
+}
+public function getDateFinReservation(){
+	return $this->_dateFinReservation;
+}
+public function setDateFinReservation($dateFinReservation){
+	$this->_dateFinReservation = $dateFinReservation;
+}
+public function getQuantite(){
+	return $this->_quantite;
+}
+public function setQuantite($quantite){
+	$this->_quantite = $quantite;
 }
 /*****************Constructeur******************/ 
 public function __construct(array $options = [])
