@@ -85,15 +85,7 @@ echo '
                 <div class="input">
             <select name="idRole" >';
 ?>
-<div class="ligneDetail">
-<?php if ($mode!="ajout") echo '<img alt="'.$prod->getLibelleProduit().'" scr="'.$prod->getImage().'>';?>
-    <div class="libelleInput">
-       Changer d'image :</div>
-    <div class="input">
-        <input type="file" name="image"
-            <?=$disabled?> >
-    </div>
-</div>
+
 <?php
 foreach ($listeRole as $role)
 {
@@ -106,8 +98,15 @@ foreach ($listeRole as $role)
     }
 
     echo '<option value="' . $role->getIdRole() . '" ' . $sel .$dis. ' >' . $role->getNomRole() . '</option>';
-}
-
+}?>
+<div class="ligneDetail">
+<?php if ($mode!="ajout") echo '<img alt="'.$prod->getLibelleProduit().'" scr="'.$prod->getImage().'>';?>
+    <div class="libelleInput">Changer d'image :</div>
+    <div class="input">
+        <input type="file" name="image"<?=$disabled?> >
+    </div>
+</div>
+<?php
 echo '
     </select></div>
     </div>';
@@ -117,7 +116,7 @@ echo $submit;
     <a href="?page=ListeUser" class=" crudBtn crudBtnRetour">Annuler</a>
 </div>
 <div class="EspaceH"></div> 
-    </div> 
+    </div>
         <div class="BlockGauche "></div> 
     </div>
 
