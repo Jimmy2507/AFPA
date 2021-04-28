@@ -2,7 +2,7 @@
 class SuiviManager{
     public static function add(Suivi $objet){
         $db = DbConnect::getDb();
-        $q = $db->prepare("INSERT INTO Suivi(idSuivi,idMatiere,idEleve,note,coefficient,) VALUES (:idSuivi,:idMatiere,:idEleve,:note,:coefficient,)");
+        $q = $db->prepare("INSERT INTO Suivi(idSuivi,idMatiere,idEleve,note,coefficient) VALUES (:idSuivi,:idMatiere,:idEleve,:note,:coefficient)");
         $q->bindValue(":idSuivi",$objet->getIdSuivi());
         $q->bindValue(":idMatiere",$objet->getIdMatiere());
         $q->bindValue(":idEleve",$objet->getIdEleve());
@@ -12,7 +12,7 @@ class SuiviManager{
     }
 
     public static function update(Suivi $objet){
-	    $db = DbConnect::getDb();	$q = $db->prepare("UPDATE Suivi SET ***** WHERE *****");
+	    $db = DbConnect::getDb();	$q = $db->prepare("UPDATE Suivi SET idSuivi=:idSuivi,idMatiere=:idMatiere,idEleve=:idEleve,note=:note,coefficient=:coefficient WHERE idSuivi=:idSuivi");
         $q->bindValue(":idSuivi",$objet->getIdSuivi());
         $q->bindValue(":idMatiere",$objet->getIdMatiere());
         $q->bindValue(":idEleve",$objet->getIdEleve());

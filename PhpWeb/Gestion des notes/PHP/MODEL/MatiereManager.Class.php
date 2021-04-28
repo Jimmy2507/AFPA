@@ -2,14 +2,14 @@
 class MatiereManager{
     public static function add(Matiere $objet){
         $db = DbConnect::getDb();
-        $q = $db->prepare("INSERT INTO Matiere(idMatiere,libelleMatiere,) VALUES (:idMatiere,:libelleMatiere,)");
+        $q = $db->prepare("INSERT INTO matiere(idMatiere,libelleMatiere) VALUES (:idMatiere,:libelleMatiere)");
         $q->bindValue(":idMatiere",$objet->getIdMatiere());
         $q->bindValue(":libelleMatiere",$objet->getLibelleMatiere());
         $q->execute();
     }
 
     public static function update(Matiere $objet){
-        $db = DbConnect::getDb();	$q = $db->prepare("UPDATE Matiere SET ***** WHERE *****");
+        $db = DbConnect::getDb();	$q = $db->prepare("UPDATE Matiere SET idMatiere=:idMatiere,libelleMatiere=:libelleMatiere WHERE idMatiere=:idMatiere");
         $q->bindValue(":idMatiere",$objet->getIdMatiere());
         $q->bindValue(":libelleMatiere",$objet->getLibelleMatiere());
         $q->execute();

@@ -23,4 +23,4 @@ function chargerPage($tab){
 
 function crypter($mdp){
     return md5(md5($mdp).strlen($mdp));
-}    
+} 

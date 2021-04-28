@@ -42,9 +42,11 @@ header{
 .EspaceV1{
     flex:1;
 }
-.EspaceV02{
-    flex: 0.2;
+.EspaceH{
+    flex: none;
+    height: 1vw;
 }
+
 .Logo{
     background-image: url('../IMG/Logo.png');
     background-repeat: no-repeat;
@@ -57,4 +59,7 @@ header{
 }
 .Titre{
     text-align: center;
+}
+.Block{
+    align-items :center;
 }

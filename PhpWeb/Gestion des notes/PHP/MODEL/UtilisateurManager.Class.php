@@ -2,7 +2,8 @@
 class UtilisateurManager{
     public static function add(Utilisateur $objet){
         $db = DbConnect::getDb();
-        $q = $db->prepare("INSERT INTO Utilisateur(idUtilisateur,nomUtilisateur,prenomUtilisateur,role,idMatiere,login,motDePasse,) VALUES (:idUtilisateur,:nomUtilisateur,:prenomUtilisateur,:role,:idMatiere,:login,:motDePasse,)");
+        $objet->setMotDePasse(crypter($objet->getMotDePasse()));
+        $q = $db->prepare("INSERT INTO Utilisateur(idUtilisateur,nomUtilisateur,prenomUtilisateur,role,idMatiere,login,motDePasse) VALUES (:idUtilisateur,:nomUtilisateur,:prenomUtilisateur,:role,:idMatiere,:login,:motDePasse)");
         $q->bindValue(":idUtilisateur",$objet->getIdUtilisateur());
         $q->bindValue(":nomUtilisateur",$objet->getNomUtilisateur());
         $q->bindValue(":prenomUtilisateur",$objet->getPrenomUtilisateur());
@@ -14,7 +15,7 @@ class UtilisateurManager{
     }
 
     public static function update(Utilisateur $objet){
-        $db = DbConnect::getDb();	$q = $db->prepare("UPDATE Utilisateur SET ***** WHERE *****");
+        $db = DbConnect::getDb();	$q = $db->prepare("UPDATE Utilisateur SET idUtilisateur=:idUtilisateur,nomUtilisateur=:nomUtilisateur,prenomUtilisateur=:prenomUtilisateur,role=:role,idMatiere=:idMatiere,login=:login,motDePase=:motDePasse WHERE idUtilisateur=:idUtilisateur");
         $q->bindValue(":idUtilisateur",$objet->getIdUtilisateur());
         $q->bindValue(":nomUtilisateur",$objet->getNomUtilisateur());
         $q->bindValue(":prenomUtilisateur",$objet->getPrenomUtilisateur());

@@ -1,5 +1,5 @@
 <?php
-var_dump($_POST);
+//var_dump($_POST);
 $uti = UtilisateurManager::findByPseudo($_POST['login']);
 if ($uti != false)
 {

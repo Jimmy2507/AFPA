@@ -2,7 +2,7 @@
 class EleveManager{
     public static function add(Eleve $objet){
         $db = DbConnect::getDb();
-        $q = $db->prepare("INSERT INTO Eleve(idEleve,nomEleve,prenomEleve,classe,) VALUES (:idEleve,:nomEleve,:prenomEleve,:classe,)");
+        $q = $db->prepare("INSERT INTO eleve(idEleve,nomEleve,prenomEleve,classe) VALUES (:idEleve,:nomEleve,:prenomEleve,:classe)");
         $q->bindValue(":idEleve",$objet->getIdEleve());
         $q->bindValue(":nomEleve",$objet->getNomEleve());
         $q->bindValue(":prenomEleve",$objet->getPrenomEleve());
@@ -11,7 +11,7 @@ class EleveManager{
     }
 
     public static function update(Eleve $objet){
-        $db = DbConnect::getDb();	$q = $db->prepare("UPDATE Eleve SET ***** WHERE *****");
+        $db = DbConnect::getDb();	$q = $db->prepare("UPDATE eleve SET idEleve=:idEleve,nomEleve=:nomEleve,classe=:classe WHERE idEleve=:idEleve");
         $q->bindValue(":idEleve",$objet->getIdEleve());
         $q->bindValue(":nomEleve",$objet->getNomEleve());
         $q->bindValue(":prenomEleve",$objet->getPrenomEleve());
@@ -21,7 +21,7 @@ class EleveManager{
 
     public static function delete(Eleve $objet){
         $db = DbConnect::getDb();
-        $db->exec("DELETE FROM Eleve WHERE idEleve=" . $objet->getIdEleve());
+        $db->exec("DELETE FROM eleve WHERE idEleve=" . $objet->getIdEleve());
     }
 
     public static function findById($id){

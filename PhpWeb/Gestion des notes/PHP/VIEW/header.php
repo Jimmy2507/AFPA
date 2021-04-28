@@ -17,6 +17,7 @@
         ?>
         
     </div>
-        
+        <div class="EspaceH"></div>
 </header>
 <div class="Trait"></div>
+<div class="EspaceH"></div>
