@@ -1,0 +1,60 @@
+body,html,header,main,div{
+    display: flex;
+    flex:1;
+}
+.colonne{
+    flex-direction: column;
+}
+.ligne{
+    flex-direction: row;
+}
+body{
+    background-color: #f8cbad;
+    flex-direction: column;
+}
+header{
+    flex-direction: row;
+}
+.Boutton,a{
+    color: black;
+    font-size: 16px;
+    text-transform: uppercase;
+    background: #f2a16a;
+    border-radius: 40px;
+    padding: 10px 17px 9px;
+    transition: all .2s;
+    text-align: center;
+    font-weight: 600;
+    -webkit-appearance: none;
+    border: 0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.Boutton,a:hover{
+    color: #fff;
+    opacity: .9;
+    text-decoration: none;
+    outline: 0;
+    cursor: pointer;
+}
+
+.EspaceV1{
+    flex:1;
+}
+.EspaceV02{
+    flex: 0.2;
+}
+.Logo{
+    background-image: url('../IMG/Logo.png');
+    background-repeat: no-repeat;
+}
+.Trait{
+    flex: none;
+    background-color: white;
+    height: 15%;
+    width: 100%;
+}
+.Titre{
+    text-align: center;
+}

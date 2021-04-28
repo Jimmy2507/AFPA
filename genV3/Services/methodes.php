@@ -169,7 +169,7 @@ $texte .= 'public static function add('.$nomClass.' $objet){
         //************************UPDATE BDD ***************************************************** */
         $texte .=' public static function update('.$nomClass.' $objet'."){\n";
         $texte .= "\t".'$db = DbConnect::getDb();';
-        $texte .= "\t".'$q = $db->prepare("UPDATE '.$nomClass.' SET ** WHERE **");'."\n";
+        $texte .= "\t".'$q = $db->prepare("UPDATE '.$nomClass.' SET ***** WHERE *****");'."\n";
             for ($i=0; $i < count($attribut); $i++) { 
                 $texte .= '$q->bindValue(":'.$attribut[$i].'",$objet->get'.ucfirst($attribut[$i])."());\n";
             }
