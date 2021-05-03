@@ -3,9 +3,11 @@ tab = []
     for (let i = 0; i < nb; i++) {
         tab[i]=parseInt(prompt("Valeur : "));
     }
-    
-    tab.forEach(e=> {
-        e++
-        console.log(e)
+    nbPG =0
+    tab.forEach(e => {
+        if(nb > nbPG){
+            nbPG = nb
+        }
     });
+    console.log("Le nombre le plus grand est : "+nbPG)
 
