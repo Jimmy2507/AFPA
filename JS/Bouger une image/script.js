@@ -26,21 +26,26 @@ window.onkeydown = function(e) {
         }
 };
 
-dep=10,leftPos=0;
+dep=10,leftPos=0;topPos=0;
 
 function avancer(sens){
     switch (sens){
         case "droite":
             leftPos+=dep
-            console.log(leftPos)
             document.getElementById("c1").style.left=leftPos+"px" 
             break;
         case "gauche":
             leftPos-=dep
-            console.log(leftPos)
             document.getElementById("c1").style.left=leftPos+"px" 
-            break;        
+            break;
+        case "haut":
+            topPos-=dep
+            document.getElementById("c1").style.top=topPos+"px" 
+            break;
+        case "bas":
+            topPos+=dep
+            document.getElementById("c1").style.top=topPos+"px" 
+            break;     
     }
 
 }
-//setInterval(avancer,100);
