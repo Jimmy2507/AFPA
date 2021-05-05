@@ -1,11 +1,37 @@
+body,div,header,main{
+    display: flex;
+    flex: 1;
+}
+body{
+    background-color: rgb(114, 112, 112);
+    flex-direction: column;
+}
+.Fleche{
+    flex: 0.2;
+}
+.colonne{
+    flex-direction: column;
+}
 
+button{
+    font-size: 1.5em;
+}
+.Titre{
+    justify-content: center;
+}
 div.carre{
-    background: #990303;
+    background: #b40505;
     border-radius: 4px;
     width: 30px;
     height: 30px;
     position:  absolute; 
-    top: 10px;
+    top: 100px;
     left: 10px;
     margin:0px;
+}
+main{
+    flex-direction: row;
+}
+.Mur{
+    background-color: black;
 }
