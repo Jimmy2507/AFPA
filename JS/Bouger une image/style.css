@@ -56,7 +56,7 @@ div.carre{
 .obstacle3{
     position: absolute;
     background-color: black;
-    top: 667px;
+    top: 669px;
     left: 400px;
     height: 30%;
     width: 55%;
@@ -80,8 +80,16 @@ div.carre{
 .obstacle6{
     position: absolute;
     background-color: black;
-    top: 138px;
-    left: 575px;
+    top: 485px;
+    left: 822px;
     height: 19%;
-    width: 42%;
+    width: 33%;
+}
+.teleporteur{
+    position: absolute;
+    background-color: rgb(3, 77, 3);
+    top: 911px;
+    left: 188px;
+    height: 5%;
+    width: 12%;
 }
