@@ -1,5 +1,7 @@
+//alert(window.innerHeight+" "+window.innerWidth)
+//TOUCHE CLAVIER
 window.onkeydown = function(e) {
-    var key = e.keyCode || e.which;
+    var key = e.keyCode;
     switch (key) {
         case 37:
             //-Gauche
@@ -26,7 +28,7 @@ window.onkeydown = function(e) {
         }
 };
 
-
+//  BOUTTONS
 var boutton = document.getElementsByTagName("button");
     for (let i = 0; i < boutton.length; i++) {
         boutton[i].addEventListener("click",function(){
@@ -52,43 +54,66 @@ var boutton = document.getElementsByTagName("button");
             }
         });
     }
-dep=10,leftPos=0;topPos=100;
+dep=10,leftPos=270;topPos=150;
+carre = document.querySelector("#carre")
 
-var xMousePos = 0;
-var yMousePos = 0;
-carre = document.querySelector("#c1")
-window.onmousemove = function(e)
-{
-    xMousePos = e.clientX + window.pageXOffset;
-    yMousePos = e.clientY + window.pageYOffset;
-        window.onmouseover = function(){
-            //alert("Position de la souris en Y : "+yMousePos+", position de la souris en X : "+xMousePos)
-            leftPos=xMousePos;
-            topPos=yMousePos;
-            carre.style.left=xMousePos+"px";
-            carre.style.top=yMousePos+"px";
-        }
-};
+//Bouger avec la souris
 
+// window.addEventListener("mousemove",souris);
 
+// function souris(event){
+//     carre.style.top = event.y+"px";
+//     carre.style.left = event.x+"px";
+// }
+
+//METHODE POUR BOUGER
 function avancer(sens){
-    switch (sens){
-        case "droite":
-            leftPos+=dep
-            carre.style.left=leftPos+"px" 
-            break;
-        case "gauche":
-            leftPos-=dep
-            carre.style.left=leftPos+"px" 
-            break;
-        case "haut":
-            topPos-=dep
-            carre.style.top=topPos+"px" 
-            break;
-        case "bas":
-            topPos+=dep
-            carre.style.top=topPos+"px" 
-            break;     
+    if(depl_ok){
+        switch (sens){
+            case "droite" :
+                if(leftPos <(window.innerWidth-40)){
+                    leftPos+=dep
+                    carre.style.left=leftPos+"px"                
+                }
+                break;
+            case "gauche":
+                if(leftPos >10){
+                    leftPos-=dep
+                    carre.style.left=leftPos+"px" 
+                }
+                break;
+            case "haut":
+                if(topPos>125){
+                    topPos-=dep
+                    carre.style.top=topPos+"px"                
+                }
+                break;
+            case "bas":
+                if(topPos<(window.innerHeight-40)){
+                    topPos+=dep
+                    carre.style.top=topPos+"px"                 
+                }
+                break;     
+        }        
     }
 
 }
+//Valider Deplacement
+var listeObs = document.querySelectorAll('.obstacle');
+listeObs.forEach(function (elt) {
+    var styleObst = window.getComputedStyle(elt, null);
+    var tob = parseInt(styleObst.top);
+    var lob = parseInt(styleObst.left);
+    var wob = parseInt(styleObst.width);
+    var hob = parseInt(styleObst.height);
+    
+    deplacement_ok = deplacement_ok && depl_ok(tob, lob, wob, hob, t + dy, l + dx, w, h);
+});
+
+function depl_ok(tob, lob, wob, hob, t, l, w, h) {
+    if (l < lob + wob && l + w > lob && t < tob + hob && t + h > tob) {
+        return false
+    }
+    return true;
+}
+
