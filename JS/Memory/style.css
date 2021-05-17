@@ -18,18 +18,18 @@ body {
 }
 
 .case {
-    margin: 1%;
+    margin: 0.5vw;
 }
 
 img {
     width: 100%;
 }
 
-#info {
+#messages {
     display: flex;
     justify-content: space-between;
 }
 
-#bouton {
+#boutons {
     text-align: center;
 }
