@@ -1,3 +1,8 @@
+body{
+    background-color: rgb(136, 134, 134);
+}
+
 #dessin{
     border:solid 1px black;
 }
+
