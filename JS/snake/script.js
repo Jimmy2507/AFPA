@@ -4,49 +4,79 @@ cote=20;
 score=document.getElementById("score");
 dessin=document.getElementById("dessin");
 ctx=dessin.getContext("2d");
-listeBouttons = document.getElementsByTagName("button");
-for (let i = 0; i < listeBouttons.length; i++) {
-	listeBouttons[i].addEventListener("click",function(){
+listeBouttonsCouleur = document.getElementsByClassName("couleur");
+listeBouttonsDifficulte = document.getElementsByClassName("Difficulte");
+//CHANGEMENT COULEUR
+for (let i = 0; i < listeBouttonsCouleur.length; i++) {
+	listeBouttonsCouleur[i].addEventListener("click",function(){
         couleurSnake(i);
     })
 }
 
-snake=[[1,0]];
+//CHANGEMENT DIFFICULTE
+
+//***************************************************************CA VA PAS***********************************************************//
+for (let i = 0; i < listeBouttonsDifficulte.length; i++) {
+	listeBouttonsDifficulte[i].addEventListener("click",function(){
+		switch (i) {
+			case 0:	
+			
+				speed = 150;
+				break;
+			case 1:
+				
+				speed = 100;
+				break;
+			case 2:
+				
+				speed = 50;
+				break;
+		}
+		if(timerJeu != undefined){
+			clearInterval(timerJeu)
+		}
+		
+	timerJeu=setInterval(boucleJeu,speed);	
+
+    })
+}
+//**************************************************************************************************************************************** */
+snake=[[1,0]];//TAILLE DU SERPENT
 snakeIncX=1;
 snakeIncY=0;
 dessin.width=nbColonne*cote;
 dessin.height=nbLigne*cote;
-timerJeu=setInterval(boucleJeu,100);
+
 placeBonbon();
 couleurSnake();
-alert("Appuie sur ok pour commencer ! ")
+
 window.onkeydown = function(e) {
     key = e.keyCode;
 	switch(key){
-		case 37: //Gauche
+		case 37 : //Gauche
 			if(snakeIncX==0){
 				snakeIncX=-1;
 				snakeIncY=0
 			}
-		break;	
-    	case 38: //Haut
+			break;	
+    	case 38 : //Haut
 			if(snakeIncY==0){
 				snakeIncX=0;
 				snakeIncY=-1
 			}
-		break;	
+			break;	
     	case 39: //Droite
 			if(snakeIncX==0){
 				snakeIncX=1;
 				snakeIncY=0
 			}
-		break;
+			break;
     	case 40: //Bas
 			if(snakeIncY==0){
 				snakeIncX=0;
 				snakeIncY=1;
 			}
-		break;
+			break;
 		case 27:
 			//Echap
 			alert("Pause")
@@ -60,24 +90,27 @@ function couleurSnake(numBtn){
 		ctx.fillStyle="blue";
 	}else if(numBtn == 2){
 		ctx.fillStyle="green";
+	}else if (numBtn == 3){
+		
 	}else{
-		ctx.fillStyle="green";
+		ctx.fillStyle="yellow";
 	}
 }
 
 function majDessin(){
-	ctx.clearRect(0,0,dessin.width,dessin.height);
-	for(i=0,l=snake.length;i<l;i++){
+	ctx.clearRect(0,0,dessin.width,dessin.height); //ON SUPPRIME TOUT LE CANVAS
+	for(i=0,l=snake.length;i<l;i++){ 				//BOUCLE POUR AFFICHER TOUT LES ELEMENT DU SERPENT
 		ctx.fillRect(snake[i][0]*cote,snake[i][1]*cote,cote,cote);
 	}
+	//AFFICHAGE BONBON
 	ctx.fillRect(bonbon[0]*cote,bonbon[1]*cote,cote,cote);	
 }
 
-function majScore(s){
-	score.innerHTML=s;
+function majScore(point){
+	score.innerHTML=point;
 }
 
-function finPartie(){
+function perdu(){
 	clearInterval(timerJeu);
 	alert("Perdu !");
 	location.reload();
@@ -87,7 +120,7 @@ function boucleJeu(){
 	if(bougeSnake()){
 		majDessin();
 	}else{
-		finPartie();
+		perdu();
 	}
 }
 
@@ -108,6 +141,7 @@ function bougeSnake(){
            return false; 
         } 
 	}
+	//SI LA TETE TOUCHE UN BONBON
     if((tete[0]==bonbon[0])&&(tete[1]==bonbon[1])){
 		placeBonbon();
 		majScore(snake.length);

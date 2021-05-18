@@ -6,16 +6,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <h1>SNAKE</h1>
-    Score : <span id="score">0</span>
+    <div>Score : <span id="score">0</span></div>
+    <div class="lvl">
+        <button class="Difficulte">Facile</button>
+        <button class="Difficulte">Normal</button>
+        <button class="Difficulte">Difficile</button>
+    </div>
+
 <br/>
+
 <canvas id="dessin"></canvas>
 <h3>Changer la couleur du serpent :</h3>
-<div class="Couleur">
-    <button id="Rouge">Rouge</button>
-    <button id="Bleu">Bleu</button>
-    <button id="Vert">Vert</button>
-</div>
+    <button class="couleur">Rouge</button>
+    <button class="couleur">Bleu</button>
+    <button class="couleur">Vert</button>
+    <button class="couleur">Rainbow</button>
 </body>
 <script src="script.js"></script>
 </html>
