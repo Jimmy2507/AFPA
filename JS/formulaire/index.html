@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<div class="Ligne">
+    <div></div>
+    <form action="" class="Colonne">
+        <div class="Ligne">
+            <label for="Nom">Nom :</label>
+            <input name = "Nom" id="Nom"type="text" pattern="[a-zA-Z]">
+            <div class="erreur"></div>
+        </div>
+        <div class="Ligne">
+            <label for="Prenom">Prenom :</label>
+            <input name = "Prenom" id="Prenom" type="text" pattern="[a-zA-Z]">
+            <div class="erreur"></div>
+        </div>
+        <div class="Ligne">
+            <label for="Age">Age :</label>
+            <input name = "Age" id="Age" type="text" pattern="[0-9]">
+            <div class="erreur"></div>
+        </div>
+        <div class="Ligne">
+            <label for="Adresse">Adresse :</label>
+            <input name = "Adresse" id="Adresse" type="text" pattern="[0-9]+ (rue de | avenue) [a-z]">
+            <div class="erreur"></div>
+        </div>
+        <div class="Ligne">
+            <label for="Mail">Adresse mail :</label>
+            <input name = "Mail" id="Mail" type="text" pattern="^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$">
+            <div class="erreur"></div>
+        </div>
+        <div class="Ligne">
+            <label for="NumTel">Numero de telephone :</label>
+            <input name = "NumTel" id="NumTel" type="text" pattern="^(0|\+33)[1-9]{9}">
+            <div class="erreur"></div>
+        </div>
+        <div class="Ligne">
+            <label for="Commentaire">Commentaire :</label>
+            <input name = "Commentaire" id="Commentaire" type="text">
+            <div class="erreur"></div>
+        </div>
+        <button type="submit">Valider</button>
+    </form>
+    <div></div>
+</div>
+</body>
+<script src="script.js"></script>
+</html>

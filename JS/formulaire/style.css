@@ -1,0 +1,11 @@
+body,div{
+    display: flex;
+}
+.Colonne{
+    display: flex;
+    flex-direction: column;
+}
+.Ligne{
+    flex-direction: row;
+    flex: 1;
+}
