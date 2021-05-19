@@ -1,6 +1,7 @@
 nbColonne=30;
 nbLigne=20;
-cote=20;
+cote=20;		
+timerJeu ="";
 score=document.getElementById("score");
 dessin=document.getElementById("dessin");
 ctx=dessin.getContext("2d");
@@ -32,12 +33,11 @@ for (let i = 0; i < listeBouttonsDifficulte.length; i++) {
 				speed = 50;
 				break;
 		}
-		if(timerJeu != undefined){
+		try {
 			clearInterval(timerJeu)
+		} catch (error) {
 		}
-		
-	timerJeu=setInterval(boucleJeu,speed);	
-
+	timerJeu=setInterval(boucleJeu,speed);
     })
 }
 //**************************************************************************************************************************************** */
