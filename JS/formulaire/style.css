@@ -43,3 +43,9 @@ form{
 #oeilBarre{
     display: none;
 }
+.croix{
+    display: none;
+}
+.check{
+    display :none;
+}
