@@ -1,22 +1,60 @@
 input = document.getElementsByTagName("input");
 oeil = document.querySelector("#oeil");
-oeilBarre = document.querySelector("#oeilBarre");
 valid = document.querySelector("#valid");
 clear = document.querySelector("#Reload");
 mdp = document.querySelector("#Mdp");
-message = document.querySelector(".message")
+message = document.querySelector(".message");
+msg2= document.getElementsByClassName("msg");
 confirmMdp = document.querySelector("#ConfirmMdp");
-confirmMdp.addEventListener("input",verifMdp);
+oeil2 = document.querySelector("#oeil2");
+
+//AFFICHE MDP
+oeil.addEventListener("mousedown",function(){
+    mdp.setAttribute("type","text")
+    oeil.style.display = "none"
+    oeilBarre.style.display = "flex"
+});
+document.addEventListener("mouseup",function(){
+    mdp.setAttribute("type","password")
+    oeil.style.display = "flex"
+    oeilBarre.style.display = "none"
+})
+//AFFICHER CONFIRMATION
+oeil2.addEventListener("mousedown",function(){
+    confirmMdp.setAttribute("type","text")
+    oeil2.style.display = "none"
+    oeilBarre2.style.display = "flex"
+});
+document.addEventListener("mouseup",function(){
+    confirmMdp.setAttribute("type","password")
+    oeil2.style.display = "flex"
+    oeilBarre2.style.display = "none"
+})
+
 clear.addEventListener("click",reload);
+mdp.addEventListener("contextmenu", annule);
+confirmMdp.addEventListener("contextmenu",annule);
+confirmMdp.addEventListener("paste",annule);
+
 verif = []
+
 for (let i = 0; i < input.length; i++) {
     input[i].addEventListener("input",function(){
         verifInput(i);
         verification();  
     });
 }
-oeil.addEventListener("click",afficheMdp);
-oeilBarre.addEventListener("click",Mdp);
+
+confirmMdp.addEventListener("input",function(){
+    if(confirmMdp.value== mdp.value){
+        confirmMdp.style.borderColor="#81c0fc"
+    }else if (confirmMdp.value!= mdp.value){
+        confirmMdp.style.borderColor="#fb485e"
+    }else{
+        confirmMdp.style.borderColor=""
+    }
+})
+
 function reload(){
     for (let i = 0; i < input.length; i++) {
         input[i].value=""
@@ -26,25 +64,19 @@ function reload(){
 }
 
 function verifInput(i){ 
+    nom = input[i].name
     if(input[i].checkValidity()&& input[i].value!=""){
         input[i].style.borderColor="#81c0fc"
+        msg2[i].innerHTML = "Champs valide."
     }else if(!input[i].checkValidity()&& input[i].value!=""){
         input[i].style.borderColor="#fb485e"
+        message.innerHTML = nom+" est incorrect"
+        msg2[i].innerHTML = "Champs invalide."
     }else{
         input[i].style.borderColor=""
+        message.innerHTML = " "
+        msg2[i].innerHTML = "Champs requis!"
     }
-}
-
-function afficheMdp(){
-    mdp.setAttribute("type","text")
-    oeil.style.display = "none"
-    oeilBarre.style.display = "flex"
-}
-
-function Mdp(){
-    mdp.setAttribute("type","password")
-    oeil.style.display = "flex"
-    oeilBarre.style.display = "none"
 }
 
 function verification(){
@@ -61,15 +93,8 @@ function verification(){
         valid.disabled = true;
     }
 }
-function verifMdp(){
-    if(confirmMdp === mdp && confirmMdp!=""){
-        mdp.style.borderColor="#81c0fc";
-        confirmMdp.style.borderColor="#81c0fc";
-    }else if (confirmMdp!= mdp && confirmMdp!=""){
-        mdp.style.borderColor="#fb485e";
-        confirmMdp.style.borderColor="#fb485e";
-    }else{
-        mdp.style.borderColor="";
-        confirmMdp.style.borderColor="";
-    }
+
+function annule(){
+    event.preventDefault();
+    return false;
 }

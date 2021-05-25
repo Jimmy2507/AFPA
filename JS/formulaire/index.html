@@ -24,74 +24,87 @@
                 <div></div>
                 <i class="fas fa-info" title="Que des lettres"></i>
                 <div></div>
+                <div class="msg"></div>
+                <div></div>
             </div>
+            
             <div class="PetitEspace"></div>
             <div class="Ligne">
                 <label for="Prenom">Prenom :</label>
-                <input name = "Prenom" id="Prenom" type="text" title="Que des lettres" pattern="^[A-Za-z]+$">
+                <input name = "Prenom" id="Prenom" type="text" title="Que des lettres" required pattern="^[A-Za-z]+$">
                 <div></div>
                 <i class="fas fa-info" title="Que des lettres"></i>
+                <div></div>
+                <div class="msg"></div>
                 <div></div>
             </div>
             <div class="PetitEspace"></div>
             <div class="Ligne">
                 <label for="Age">Age :</label>
-                <input name = "Age" id="Age" type="text" title="Que des chiffres" pattern="^[0-9]+$">
+                <input name = "Age" id="Age" type="text" title="Que des chiffres" required pattern="^[0-9]+$">
                 <div></div>
                 <i class="fas fa-info" title="Que des chiffres"></i>
+                <div></div>
+                <div class="msg"></div>
                 <div></div>
             </div>
             <div class="PetitEspace"></div>
             <div class="Ligne">
                 <label for="CP">Code postal :</label>
-                <input name = "CP" id="CP" type="text" title="ex : 59210" pattern="^[0-9]{5}$">
+                <input name = "CP" id="CP" type="text" title="ex : 59210" required pattern="^[0-9]{5}$">
                 <div></div>
                 <i class="fas fa-info"title="ex : 59210"></i>
+                <div></div>
+                <div class="msg"></div>
                 <div></div>
             </div>
             <div class="PetitEspace"></div>
             <div class="Ligne">
                 <label for="Mail">Adresse mail :</label>
-                <input name = "Mail" id="Mail" type="text" title="***@***.***" pattern="^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,3}$">
+                <input name = "Mail" id="Mail" type="text" title="***@***.***" required pattern="^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,3}$">
                 <div></div>
                 <i class="fas fa-info" title="***@***.***"></i>
+                <div></div>
+                <div class="msg"></div>
                 <div></div>
             </div>
             <div class="PetitEspace"></div>
             <div class="Ligne">
                 <label for="NumTel">Numero de telephone :</label>
-                <input name = "NumTel" id="NumTel" type="text" title="0611111111 ou +33111111111" pattern="^(0|\+33)[\d]{9}$">
+                <input name = "NumTel" id="NumTel" type="text" title="0611111111 ou +33111111111" required pattern="^(0|\+33)[\d]{9}$">
                 <div></div>
                 <i class="fas fa-info" title="0611111111 ou +33111111111"></i>
                 <div></div>
+                <div class="msg"></div>
+                <div></div>
             </div>
             <div class="PetitEspace"></div>
-            <div class="Ligne">
+            <div id = "inputMdp" class="Ligne">
                 <label for="Mdp">Mot de passe :</label>
-                <input name = "Mdp" id="Mdp" type="password" title="Mot de passe contenant minimum : 1 lettre minuscule 1 lettres Majuscule 1 carractére speciaux 1 chiffre" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,})$">
+                <input name = "Mdp" id="Mdp" type="password" title="Mot de passe contenant minimum : 1 lettre minuscule 1 lettres Majuscule 1 carractére speciaux 1 chiffre" required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,})$">
                 <i id="oeil"class="fas fa-eye"></i>
                 <i id="oeilBarre" class="fas fa-eye-slash"></i>
-                <div class="PetitEspace1"></div>
+                <div></div>
                 <i class="fas fa-info" title="Mot de passe contenant minimum : 1 lettre minuscule 1 lettres Majuscule 1 carractére speciaux 1 chiffre"></i>
                 <div></div>
+                <div class="msg"></div>
+                <div></div>
+                
             </div>
             <div class="PetitEspace"></div>
-            <div class="Ligne">
+            <div id = "inputMdp" class="Ligne">
                 <label for="ConfirmMdp">Confirmation du mot de passe :</label>
-                <input name = "ConfirmMdp" id="ConfirmMdp" type="password" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,})$">
-                <div></div>
+                <input name = "ConfirmMdp" id="ConfirmMdp" type="password" required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,})$">
                 <i id="oeil2"class="fas fa-eye"></i>
                 <i id="oeilBarre2" class="fas fa-eye-slash"></i>
-                <div class="PetitEspace1"></div>
+                <div></div>
+                <i class="fas fa-info" title="Confirmation du mot de passe"></i>
+                <div></div>
+                <div class="msg"></div>
                 <div></div>
             </div>
             <div class="PetitEspace"></div>
             <div class="Colonne">
-                <div class="Ligne">
-                    <div></div>
-                    <div class="message Titre"></div>
-                    <div></div>
-                </div>
                 <div class="Ligne">
                     <div></div>
                     <button id ="valid"type="submit" disabled>Valider</button>
@@ -99,7 +112,12 @@
                     <i id="Reload" class="fas fa-retweet"></i>
                     <div></div>
                 </div>
+                <div class="Ligne">
+                    <div></div>
+                    <div class="message Titre"></div>
+                    <div></div>
                 </div>
+            </div>
         </form>
         <div></div>
     </div>

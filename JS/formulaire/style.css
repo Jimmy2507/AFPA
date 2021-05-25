@@ -3,6 +3,9 @@ body,div,form{
     flex-direction: column;
     flex: 1;
 }
+form{
+    padding: 4vh 3vw;
+}
 body{
     background-image: url("./IMG/texture.jpg");
     background-size: cover;
@@ -17,10 +20,17 @@ label
 {
 	display: block;
 	width: 150px;
-	float: left;
 }
 form{
     flex: 0.5;
+}
+#inputMdp{
+    position: relative;
+}
+#oeil,#oeilBarre,#oeil2,#oeilBarre2{
+    position: absolute;
+    right: 3.5vw;
+    top: 0.1vw;
 }
 .Titre{
     text-align: center;
@@ -44,9 +54,15 @@ form{
 #oeilBarre,#oeilBarre2{
     display: none;
 }
-.croix{
+input[required]+div::before{
+    content: "*";
+    color: red;
+}
+/* .croix{
     display: none;
+    color: red;
 }
 .check{
-    display :none;
-}
+    display : none;
+    color: green;
+} */
