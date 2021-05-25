@@ -58,6 +58,7 @@ input[required]+div::before{
     content: "*";
     color: red;
 }
+
 /* .croix{
     display: none;
     color: red;

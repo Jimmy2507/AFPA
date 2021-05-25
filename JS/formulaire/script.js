@@ -59,6 +59,7 @@ function reload(){
     for (let i = 0; i < input.length; i++) {
         input[i].value=""
         input[i].style.borderColor=""
+        msg2[i].value=""
         valid.disabled = true;
     }
 }
