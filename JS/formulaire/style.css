@@ -1,11 +1,52 @@
-body,div{
+body,div,form{
     display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+body{
+    background-image: url("./IMG/texture.jpg");
+    background-size: cover;
 }
 .Colonne{
-    display: flex;
     flex-direction: column;
 }
 .Ligne{
     flex-direction: row;
+}
+label
+{
+	display: block;
+	width: 150px;
+	float: left;
+}
+form{
+    flex: 0.5;
+}
+.Titre{
+    text-align: center;
+}
+.Encadre{
+    border: 1px solid black;
+    border-radius: 2%;
+}
+.PetitEspace{
+    flex: none;
+    height: 1vw;
+    width: 100%;
+}
+.PetitEspaceV{
     flex: 1;
+}
+.PetitEspace1{
+    flex: 0.62;
+}
+
+#oeilBarre,#oeilBarre2{
+    display: none;
+}
+.croix{
+    display: none;
+}
+.check{
+    display :none;
 }
