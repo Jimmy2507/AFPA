@@ -19,10 +19,12 @@ function meteo(ville){
                 console.log(this.responseText);
                 console.log(reponse);
                 temp = reponse.main.temp;
+                ciel = reponse.weather[0].description;
                 // ville = reponse.name
                 console.log(temp);
                 document.querySelector("#ville").textContent = ville;
                 document.querySelector("#temperature").textContent = temp+"°C";
+                document.querySelector("#Ciel").textContent = ciel;
             }
         }
     }    

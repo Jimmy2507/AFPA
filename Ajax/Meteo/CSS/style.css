@@ -24,5 +24,7 @@ body{
     height: 2vw;
 }
 #Contenu{
-    background-color: #fff;
+    background-color: rgb(61, 61, 61);
+    padding: 1vw;
+    border-radius: 1vw;
 }
