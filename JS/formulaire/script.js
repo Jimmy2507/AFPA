@@ -59,8 +59,10 @@ function reload(){
     for (let i = 0; i < input.length; i++) {
         input[i].value=""
         input[i].style.borderColor=""
-        msg2[i].value=""
+        msg2[i].innerHTML=""
         valid.disabled = true;
+        msg2[i].style.opacity = "0"
+        message.innerHTML = " "
     }
 }
 
@@ -69,14 +71,18 @@ function verifInput(i){
     if(input[i].checkValidity()&& input[i].value!=""){
         input[i].style.borderColor="#81c0fc"
         msg2[i].innerHTML = "Champs valide."
+        msg2[i].style.opacity = "100"
     }else if(!input[i].checkValidity()&& input[i].value!=""){
         input[i].style.borderColor="#fb485e"
         message.innerHTML = nom+" est incorrect"
         msg2[i].innerHTML = "Champs invalide."
+        msg2[i].style.opacity = "100"
     }else{
         input[i].style.borderColor=""
         message.innerHTML = " "
-        msg2[i].innerHTML = "Champs requis!"
+        msg2[i].innerHTML = "Champs requis!" 
+        
+        
     }
 }
 

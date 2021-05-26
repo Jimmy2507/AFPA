@@ -1,0 +1,273 @@
+{
+    "nhits":10,
+    "parameters":{
+        "dataset":"parkings-gratuits",
+        "timezone":"UTC",
+        "rows":10,
+        "start":0,
+        "format":"json"
+    }
+    ,
+    "records":[
+        {
+            "datasetid":"parkings-gratuits",
+            "recordid":"9dd007d8db30378fc4079c4ef1d7b9c60ef269a0",
+            "fields":{
+                "nombre_de_place":650,
+                "temps_pour_rejoindre_le_centre_ville":"10 minutes à pied",
+                "adresse":"rue de la gare",
+                "nom_du_parking":"Gare",
+                "gratuite":"gratuit",
+                "coordonnees_gps":[
+                    50.6806,
+                    2.8812
+                ]
+            }
+            ,
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    2.8812,
+                    50.6806
+                ]
+            }
+            ,
+            "record_timestamp":"2021-03-12T09:14:36.233000+00:00"
+        }
+        ,
+        {
+            "datasetid":"parkings-gratuits",
+            "recordid":"4be2b1084f4e3f0c6da312d70560472171a42b7a",
+            "fields":{
+                "nombre_de_place":40,
+                "temps_pour_rejoindre_le_centre_ville":"3 minutes à pied",
+                "adresse":"place Victor Hugo",
+                "nom_du_parking":"Victor Hugo",
+                "gratuite":"gratuit",
+                "coordonnees_gps":[
+                    50.6834,
+                    2.8817
+                ]
+            }
+            ,
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    2.8817,
+                    50.6834
+                ]
+            }
+            ,
+            "record_timestamp":"2021-03-12T09:14:36.233000+00:00"
+        }
+        ,
+        {
+            "datasetid":"parkings-gratuits",
+            "recordid":"f1d1d46ac6917a20727dcb9fb39dc50f0fdfe1da",
+            "fields":{
+                "nombre_de_place":200,
+                "temps_pour_rejoindre_le_centre_ville":"8 minutes à pied",
+                "adresse":"avenue Marc Sangnier",
+                "nom_du_parking":"Près du Hem",
+                "gratuite":"gratuit",
+                "coordonnees_gps":[
+                    50.6923,
+                    2.8797
+                ]
+            }
+            ,
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    2.8797,
+                    50.6923
+                ]
+            }
+            ,
+            "record_timestamp":"2021-03-12T09:14:36.233000+00:00"
+        }
+        ,
+        {
+            "datasetid":"parkings-gratuits",
+            "recordid":"32177521f6d6bf68c182389e88439e040a244de0",
+            "fields":{
+                "nombre_de_place":65,
+                "temps_pour_rejoindre_le_centre_ville":"4 minutes à pied",
+                "adresse":"rue des fusillés",
+                "nom_du_parking":"Marché aux toiles",
+                "gratuite":"gratuit",
+                "coordonnees_gps":[
+                    50.6888,
+                    2.8818
+                ]
+            }
+            ,
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    2.8818,
+                    50.6888
+                ]
+            }
+            ,
+            "record_timestamp":"2021-03-12T09:14:36.233000+00:00"
+        }
+        ,
+        {
+            "datasetid":"parkings-gratuits",
+            "recordid":"0fbd34729747b569b095cc2dfdee00206f3ac20e",
+            "fields":{
+                "nombre_de_place":40,
+                "temps_pour_rejoindre_le_centre_ville":"8 minutes à pied",
+                "adresse":"place Jules Guesde",
+                "nom_du_parking":"Jules Guesde",
+                "gratuite":"gratuit",
+                "coordonnees_gps":[
+                    50.6825,
+                    2.8857
+                ]
+            }
+            ,
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    2.8857,
+                    50.6825
+                ]
+            }
+            ,
+            "record_timestamp":"2021-03-12T09:14:36.233000+00:00"
+        }
+        ,
+        {
+            "datasetid":"parkings-gratuits",
+            "recordid":"63d834febf8e9b5e0cc89a6c3b8f32b210da625a",
+            "fields":{
+                "nombre_de_place":110,
+                "temps_pour_rejoindre_le_centre_ville":"5 minutes à pied",
+                "adresse":"place Roland Garros",
+                "nom_du_parking":"Roland Garros",
+                "gratuite":"gratuit",
+                "coordonnees_gps":[
+                    50.6845,
+                    2.8855
+                ]
+            }
+            ,
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    2.8855,
+                    50.6845
+                ]
+            }
+            ,
+            "record_timestamp":"2021-03-12T09:14:36.233000+00:00"
+        }
+        ,
+        {
+            "datasetid":"parkings-gratuits",
+            "recordid":"82a5154d1a789d2e5414f1003164260c84559e42",
+            "fields":{
+                "nombre_de_place":90,
+                "temps_pour_rejoindre_le_centre_ville":"6 minutes à pied",
+                "adresse":"place de la République",
+                "nom_du_parking":"République",
+                "gratuite":"gratuit",
+                "coordonnees_gps":[
+                    50.6856,
+                    2.8739
+                ]
+            }
+            ,
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    2.8739,
+                    50.6856
+                ]
+            }
+            ,
+            "record_timestamp":"2021-03-12T09:14:36.233000+00:00"
+        }
+        ,
+        {
+            "datasetid":"parkings-gratuits",
+            "recordid":"706effaf98e4a039795e15cd7ba81d685f00fce7",
+            "fields":{
+                "nombre_de_place":80,
+                "temps_pour_rejoindre_le_centre_ville":"8 minutes à pied",
+                "adresse":"place Chanzy",
+                "nom_du_parking":"Chanzy",
+                "gratuite":"gratuit",
+                "coordonnees_gps":[
+                    50.6859,
+                    2.8917
+                ]
+            }
+            ,
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    2.8917,
+                    50.6859
+                ]
+            }
+            ,
+            "record_timestamp":"2021-03-12T09:14:36.233000+00:00"
+        }
+        ,
+        {
+            "datasetid":"parkings-gratuits",
+            "recordid":"70a821090e5e7b34fb59d4666e2b511a56296617",
+            "fields":{
+                "nombre_de_place":210,
+                "temps_pour_rejoindre_le_centre_ville":"2 minutes à pied",
+                "adresse":"rue La Fontaine",
+                "nom_du_parking":"Centre",
+                "gratuite":"gratuit",
+                "coordonnees_gps":[
+                    50.6874,
+                    2.8837
+                ]
+            }
+            ,
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    2.8837,
+                    50.6874
+                ]
+            }
+            ,
+            "record_timestamp":"2021-03-12T09:14:36.233000+00:00"
+        }
+        ,
+        {
+            "datasetid":"parkings-gratuits",
+            "recordid":"979cbe2f47a0e2eff95a44a58ddc6d184597622a",
+            "fields":{
+                "nombre_de_place":260,
+                "temps_pour_rejoindre_le_centre_ville":"3 minutes à pied",
+                "adresse":"quai de Beauvais",
+                "nom_du_parking":"Quai de Beauvais",
+                "gratuite":"gratuit",
+                "coordonnees_gps":[
+                    50.6886,
+                    2.8877
+                ]
+            }
+            ,
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    2.8877,
+                    50.6886
+                ]
+            }
+            ,
+            "record_timestamp":"2021-03-12T09:14:36.233000+00:00"
+        }
+    ]
+
+}

@@ -22,14 +22,14 @@ label
 	width: 150px;
 }
 form{
-    flex: 0.5;
+    flex: 1.5;
 }
 #inputMdp{
     position: relative;
 }
 #oeil,#oeilBarre,#oeil2,#oeilBarre2{
     position: absolute;
-    right: 3.5vw;
+    right: 24.5vw;
     top: 0.1vw;
 }
 .Titre{
@@ -58,7 +58,15 @@ input[required]+div::before{
     content: "*";
     color: red;
 }
-
+.msg{
+    flex: none;
+    background-color: #fff;
+    height: 2vw;
+    width: 10vw;
+    text-align: center;
+    border-radius: 20vw;
+    opacity: 0;
+}
 /* .croix{
     display: none;
     color: red;
