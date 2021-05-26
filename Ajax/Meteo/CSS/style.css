@@ -1,0 +1,28 @@
+body,div,header,main{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+header{
+    background-color: rgb(55, 118, 255);
+}
+body{
+    background-color: rgb(95, 94, 94);
+    color: white;
+}
+.Colonne{
+    flex-direction: column;
+}
+.Ligne{
+    flex-direction: row;
+}
+.Centre{
+    text-align: center;
+}
+.EspaceH{
+    flex: none;
+    height: 2vw;
+}
+#Contenu{
+    background-color: #fff;
+}

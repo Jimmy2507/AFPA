@@ -1,0 +1,32 @@
+body,div,header,main{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+header{
+    background-color: rgb(49, 110, 224);
+}
+body{
+    background-color: rgb(95, 94, 94);
+    color: white;
+}
+.Colonne{
+    flex-direction: column;
+}
+.Ligne{
+    flex-direction: row;
+}
+.Centre{
+    text-align: center;
+}
+.EspaceH{
+    flex: none;
+    height: 1vw;
+}
+.Encadre{
+    border: 1px solid;
+}
+.Rouge{
+    font-weight: bold;
+    color: rgb(245, 76, 76);
+}
