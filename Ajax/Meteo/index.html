@@ -6,16 +6,16 @@
     <link rel="stylesheet"  href="./CSS/style.css" />
 </head>
 <body>
-    <header>
+    <header class="Bleu">
         <div class="Ligne">
         <div class="Titre Centre"><h1>Meteo</h1></div>
         <div class="Recherche">
             <div></div>
-            <form>
+            <div class="Ligne">
                 <label class="Centre" for="ville">Ville :</label>
                 <input id="changerVille" name="ville" placeholder="Ville">
                 <button id = "boutton">Rechercher</button>
-            </form>    
+            </div>
             <div></div>
         </div>        
                 <div></div>     
@@ -28,16 +28,14 @@
                 <div></div>
                 <div id="Contenu">
                     <div id="ville"></div>
+                    <div id="icon"></div>
                     <div id="temperature"></div>
                     <div id="Ciel"></div>
+                    <div id="Vent"></div>
                 </div> 
                 <div></div>           
             </div>            
         </div>
-
-
-
-
     </main>
     <script src="JS/script.js"></script>
 </body>

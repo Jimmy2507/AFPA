@@ -2,7 +2,7 @@ contenu = document.querySelector("#Contenu");
 var repAPI;
 const req = new XMLHttpRequest();
 
-req.open('GET','https://opendata.lillemetropole.fr/api/records/1.0/search/?dataset=parkings-gratuits&q=&facet=nom_du_parking&facet=nombre_de_place&facet=adresse');
+req.open('GET','https://opendata.lillemetropole.fr/api/records/1.0/search/?dataset=parkings-gratuits&q=&facet=nom_du_parking&facet=nombre_de_place&facet=adresse',true);
 req.send(null);
 
 req.onreadystatechange = function(e){
