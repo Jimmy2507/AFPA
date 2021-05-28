@@ -5,16 +5,19 @@
     spl_autoload_register("chargerClasse");
     $mode=(isset($_GET['mode']))?$_GET['mode']:"";
     $routes=[
-            'default'=>['PHP/vue/','ListeUser','Liste des utilisateur'],
+            'default'=>['PHP/vue/','ListeUser','Liste des utilisateur',false],
 
             //Listes
-            "FormUser"=>["PHP/vue/","FormUser","Formulaire Utilisateur"],
-            "ActionUser"=>["PHP/vue/","ActionUser","Action User"]
+            "FormUser"=>["PHP/vue/","FormUser","Formulaire Utilisateur",false],
+            "ActionUser"=>["PHP/vue/","ActionUser","Action User",false],
 
             //Formulaires
 
             //Action
 
+
+            //API
+            "listeAPI" => ["PHP/modele/API/", "ListeAPI", "Accueil",true]
     ]; 
     Parametres::init();
     DbConnect::init();

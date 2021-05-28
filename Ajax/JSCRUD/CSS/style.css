@@ -3,6 +3,9 @@ body,html,header,div,main,footer{
     flex: 1;
     margin: 0;
 }
+.Colonne{
+    flex-direction: column;
+}
 body{
     background-image: url('../IMG/montagne.jpg');
     background-repeat: no-repeat;

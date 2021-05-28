@@ -14,11 +14,17 @@ function chargerPage($tab){
     $chemin = $tab[0];
     $nom = $tab[1];
     $titre = $tab[2];
-
+    if ($tab[3]) //c'est un appel API
+    {
+        include $chemin . $nom . '.php';
+    }
+    else
+    {
     include 'PHP/vue/head.php';
     include 'PHP/vue/header.php';
     include $chemin.$nom .'.php'; //Chargement de la page en fonction du chemin et du nom
     include 'PHP/vue/footer.php';
+    }
 }
 
 function crypter($mdp){

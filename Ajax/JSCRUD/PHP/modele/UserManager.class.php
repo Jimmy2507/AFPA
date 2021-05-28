@@ -40,35 +40,36 @@
 			}
 		}
 
-		public static function getList(){
+		public static function getList($api){
 			$db = DbConnect::getDb();
 			$liste = [];
 			$requete = $db->query("SELECT * FROM user");
 			while ($donnees = $requete->fetch(PDO::FETCH_ASSOC)){
 				if ($donnees <> false){
-					$liste[] = new User($donnees);
+					if($api){
+                        $liste[]=$donnees;
+                    }else{
+                        $liste[] = new User($donnees);
+                    }
 				}
 			}return $liste;
 		}
-
-		static public function getListAPI()
-		{
-			$db = DbConnect::getDb(); // Instance de PDO.
-			// Retourne la liste de tous les personnes.
-			$q = $db->query('SELECT idUser, username, password, idRole FROM user ORDER BY username');
-			while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
-				$json[] = $donnees;
+		
+		public static function getListByRole($idRole, $api){
+			$id=(int) $idRole;
+			$db = DbConnect::getDb();
+			$liste = [];
+			$q = $db->query("SELECT * FROM user where idRole=$idRole");
+			while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
+			{
+				if ($donnees != false)
+				{
+					$liste[] = new Roles($donnees);
+					$json[]=$donnees;
+				}
 			}
+			if (!$api)  return $liste;
 			return $json;
-		}
-
-		static public function count()
-		{
-			$db = DbConnect::getDb(); // Instance de PDO.
-			// Retourne la liste de tous les personnes.
-			$q = $db->query('SELECT count(*) as nb FROM user');
-			$donnees = $q->fetch(PDO::FETCH_ASSOC);
-			return $donnees;
 		}
 
 	}
