@@ -1,0 +1,46 @@
+CREATE DATABASE IF NOT EXISTS formation DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+USE formation;
+
+DROP TABLE IF EXISTS Formateur;
+
+CREATE TABLE IF NOT EXISTS Formateur(
+  idFormateur int (11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  nomFormateur varchar (50) NOT NULL
+) ENGINE = InnoDB;
+
+DROP TABLE IF EXISTS Offre;
+
+CREATE TABLE IF NOT EXISTS Offre(
+  idOffre int (11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  libelleOffre varchar (50) NOT NULL
+) ENGINE = InnoDB;
+
+DROP TABLE IF EXISTS Stagiaire;
+
+CREATE TABLE IF NOT EXISTS Stagiaire(
+  idStagiaire int (11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  nomStagiaire varchar (50) NOT NULL
+) ENGINE = InnoDB;
+
+DROP TABLE IF EXISTS Annee;
+
+CREATE TABLE IF NOT EXISTS Annee(
+  idAnnee int (11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  annee varchar (50) NOT NULL
+) ENGINE = InnoDB;
+
+DROP TABLE IF EXISTS Info;
+
+CREATE TABLE IF NOT EXISTS Info(
+  idInfo int (11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  idAnnee int (11) NOT NULL,
+  idFormateur int(11) NOT NULL,
+  idOffre int(11) NOT NULL,
+  idStagiaire int(11) NOT NULL
+) ENGINE = InnoDB;
+
+ALTER TABLE Info ADD CONSTRAINT Info_Annee_FK FOREIGN KEY (idAnnee) REFERENCES Annee(idAnnee);
+ALTER TABLE Info ADD CONSTRAINT Info_Formateur_FK FOREIGN KEY (idFormateur) REFERENCES Formateur(idFormateur);
+ALTER TABLE Info ADD CONSTRAINT Info_Offre_FK FOREIGN KEY (idOffre) REFERENCES Offre(idOffre);
+ALTER TABLE Info ADD CONSTRAINT Info_Stagiaire_FK FOREIGN KEY (idStagiaire) REFERENCES Stagiaire(idStagiaire);

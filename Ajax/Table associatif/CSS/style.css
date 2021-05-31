@@ -1,0 +1,30 @@
+body,div,main,header{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+body{
+    color: white;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(184, 184, 184);
+}
+
+header{
+    background-color: rgb(2, 97, 26);
+}
+
+.Ligne{
+    flex-direction: row;
+}
+.Colonne{
+    flex-direction: column;
+}
+
+.Centre{
+    text-align: center;
+}
+.EspaceH{
+    flex: none;
+    height: 2em;
+}
