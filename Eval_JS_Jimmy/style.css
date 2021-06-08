@@ -1,0 +1,17 @@
+body,html,div{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+body{
+    background-color: wheat;
+}
+.Centre{
+    text-align: center;
+}
+.Colonne{
+    flex-direction: column;
+}
+.Ligne{
+    flex-direction: row;
+}
